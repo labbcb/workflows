@@ -23,3 +23,5 @@ RUN yum -y install \
   && curl -O ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/Software/bcl2fastq/bcl2fastq-${BCL2FASTQ_VERSION}-Linux-x86_64.rpm \
   && rpm -i bcl2fastq-${BCL2FASTQ_VERSION}-Linux-x86_64.rpm \
   && rm bcl2fastq-${BCL2FASTQ_VERSION}-Linux-x86_64.rpm
+
+CMD configureBclToFastq.pl

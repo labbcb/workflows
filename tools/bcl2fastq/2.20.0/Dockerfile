@@ -13,3 +13,5 @@ RUN yum -y install \
   && unzip bcl2fastq2-v2-20-0-linux-x86-64.zip && \
   && rpm -i bcl2fastq2-v${BCL2FASTQ_VERSION}.422-Linux-x86_64.rpm && \
   && rm bcl2fastq2-v2-20-0-linux-x86-64.zip bcl2fastq2-v${BCL2FASTQ_VERSION}.422-Linux-x86_64.rpm
+
+CMD bcl2fastq
