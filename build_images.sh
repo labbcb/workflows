@@ -7,10 +7,12 @@ do
     cd ${version}
     if [ ! -f Dockerfile ]
     then
+      cd ..
       continue
     fi
     docker build --tag "welliton/${tool%/}:${version%/}" .
     docker push "welliton/${tool%/}:${version%/}"
     cd ..
   done
+  cd ..
 done
