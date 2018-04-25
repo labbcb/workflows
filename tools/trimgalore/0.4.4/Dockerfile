@@ -1,4 +1,4 @@
-FROM welliton/cutadapt:v1.13
+FROM welliton/cutadapt:1.13
 
 LABEL maintainer="well309@gmail.com"
 
