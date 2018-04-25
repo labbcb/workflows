@@ -19,7 +19,7 @@ task GenomePreparation {
   }
 
   runtime {
-		docker: "welliton/bismark:v0.14.5"
+		docker: "welliton/bismark:0.14.5"
 	}
 }
 
@@ -35,7 +35,7 @@ task BismarkPaired {
   Int seedmms = 1
   Boolean unmapped = false
   Boolean ambiguous = false
-  
+
   command {
     mv ${sep=' ' genomeFiles} .
     mkdir Bisulfite_Genome
@@ -43,7 +43,7 @@ task BismarkPaired {
     mkdir Bisulfite_Genome/GA_conversion/
     mv ${sep=' ' indexFilesCT} Bisulfite_Genome/CT_conversion/
     mv ${sep=' ' indexFilesGA} Bisulfite_Genome/GA_conversion/
-    
+
     bismark . \
       -1 ${pairedFiles.left} -2 ${pairedFiles.right} \
       ${true='--fastq' false='--fasta' fastq} \
@@ -95,18 +95,18 @@ task MethylationExtractor {
   File file
   Boolean paired = false
   Boolean bedGraph = false
-  
+
   command {
     bismark_methylation_extractor ${file} \
       ${true='--paired-end' false='--single-end' paired} \
       ${true='--bedGraph' false='' bedGraph}
   }
-  
+
   output {
     File outputFile = sub(basename(file), ".bam$", ".bismark.cov.gz")
     File bedGraphFile = sub(basename(file), ".bam$", ".bedGraph.gz")
   }
-  
+
   runtime {
     docker: "welliton/bismark:v0.14.5"
   }

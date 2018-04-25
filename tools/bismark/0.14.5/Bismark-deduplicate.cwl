@@ -19,7 +19,7 @@ requirements:
     listing:
       - $(inputs.file)
   DockerRequirement:
-    dockerPull: welliton/bismark:v0.14.5
+    dockerPull: welliton/bismark:0.14.5
 
 inputs:
   file:
