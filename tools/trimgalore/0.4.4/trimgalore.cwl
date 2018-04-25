@@ -14,7 +14,7 @@ baseCommand: [trim_galore]
 requirements:
   InlineJavascriptRequirement: {}
   DockerRequirement:
-    dockerPull: welliton/trimgalore:v0.4.4
+    dockerPull: welliton/trimgalore:0.4.4
 
 inputs:
 

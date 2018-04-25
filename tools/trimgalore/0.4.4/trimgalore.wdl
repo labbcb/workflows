@@ -17,12 +17,12 @@ task TrimGaloreSingle {
 	Boolean trimN = false
 	Int? clipR1
 	Int? threePrimeClipR1
-	
+
 	# RRBS-specific options (MspI digested material)
 	Boolean rrbs = false
 	Boolean nonDirectional = false
 	Boolean keep = false
-	
+
 	command {
 		trim_galore ${file} \
 			--quality ${quality} \
@@ -45,12 +45,12 @@ task TrimGaloreSingle {
 			${true='--non_directional' false='' nonDirectional} \
 			${true='--keep' false='' keep} \
 	}
-	
+
 	output {
 		File trimFile = sub(basename(file), ".fastq(.gz)?", "_trimmed.fq") + if (gzip) then ".gz" else ""
 		File statsFile = basename(file) + "_trimming_report.txt"
 	}
-	
+
 	runtime {
 		docker: "welliton/trimgalore:v0.4.4"
 	}
@@ -78,15 +78,15 @@ task TrimGalorePaired {
 	Int? clipR2
 	Int? threePrimeClipR1
 	Int? threePrimeClipR2
-	
+
 	# RRBS-specific options (MspI digested material)
 	Boolean rrbs = false
 	Boolean nonDirectional = false
 	Boolean keep = false
-	
+
 	# Paired-end specific options
 	Boolean trim1 = false
-	
+
 	command {
 		trim_galore ${pairedFiles.left} ${pairedFiles.right} \
 			--quality ${quality} \
@@ -114,7 +114,7 @@ task TrimGalorePaired {
 			--paired \
 			${true='--trim1' false='' trim1}
 	}
-	
+
 	output {
 		Pair[File, File] trimFiles = (
 			sub(basename(pairedFiles.left), ".fastq(.gz)?", "_val_1.fq") + if (gzip) then ".gz" else "",
@@ -123,8 +123,8 @@ task TrimGalorePaired {
 			basename(pairedFiles.left) + "_trimming_report.txt",
 			basename(pairedFiles.right) + "_trimming_report.txt")
 	}
-	
+
 	runtime {
-		docker: "welliton/trimgalore:v0.4.4"
+		docker: "welliton/trimgalore:0.4.4"
 	}
 }
