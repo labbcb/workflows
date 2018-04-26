@@ -87,7 +87,7 @@ task Deduplicate {
   }
 
   runtime {
-    docker: "welliton/bismark:v0.14.5"
+    docker: "welliton/bismark:0.14.5"
   }
 }
 
@@ -108,6 +108,6 @@ task MethylationExtractor {
   }
 
   runtime {
-    docker: "welliton/bismark:v0.14.5"
+    docker: "welliton/bismark:0.14.5"
   }
 }
