@@ -52,7 +52,7 @@ task TrimGaloreSingle {
 	}
 
 	runtime {
-		docker: "welliton/trimgalore:0.4.4"
+		docker: "welliton/trimgalore:0.4.5"
 	}
 }
 
@@ -125,6 +125,6 @@ task TrimGalorePaired {
 	}
 
 	runtime {
-		docker: "welliton/trimgalore:0.4.4"
+		docker: "welliton/trimgalore:0.4.5"
 	}
 }
