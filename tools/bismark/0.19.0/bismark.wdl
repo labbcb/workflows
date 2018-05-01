@@ -35,7 +35,7 @@ task BismarkPaired {
   Int seedmms = 1
 
   # Output
-  Boolean nonDirectional = false
+  Boolean directional = true
   Boolean unmapped = false
   Boolean ambiguous = false
 
@@ -54,7 +54,7 @@ task BismarkPaired {
       ${true='--fastq' false='--fasta' fastq} \
       ${true='--bowtie1' false='' bowtie1} \
       --seedmms ${seedmms} \
-      ${true='--non_directional' false='' nonDirectional} \
+      ${true='--directional' false='--non_directional' directional} \
       ${true='--unmapped' false='' unmapped} \
       ${true='--ambiguous' false='' ambiguous}
   }
