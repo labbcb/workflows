@@ -32,10 +32,10 @@ task BismarkPaired {
 
   # Alignment
   Boolean bowtie1 = false
-  Int seedmms = 1
+  Int? seedmms
 
   # Output
-  Boolean directional = true
+  Boolean nonDirectional = false
   Boolean unmapped = false
   Boolean ambiguous = false
 
@@ -52,9 +52,9 @@ task BismarkPaired {
     bismark . \
       -1 ${pairedFiles.left} -2 ${pairedFiles.right} \
       ${true='--fastq' false='--fasta' fastq} \
-      ${true='--bowtie1' false='' bowtie1} \
-      --seedmms ${seedmms} \
-      ${true='--directional' false='--non_directional' directional} \
+      ${true='--bowtie1' false='--bowtie2' bowtie1} \
+      ${'--seedmms ' + seedmms} \
+      ${true='--non_directional' false='' nonDirectional} \
       ${true='--unmapped' false='' unmapped} \
       ${true='--ambiguous' false='' ambiguous}
   }
