@@ -2,12 +2,12 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-id: "STAR genomeGenerate" 
+id: "STAR genomeGenerate"
 label: Spliced Transcripts Alignment to a Reference
 
 requirements:
   DockerRequirement:
-    dockerPull: welliton/star:v2.5.3a
+    dockerPull: welliton/star:2.5.3a
 
 baseCommand: [STAR, --runMode, genomeGenerate, --genomeDir, .]
 
@@ -29,4 +29,3 @@ outputs:
     type: File[]
     outputBinding:
       glob: "*"
-  

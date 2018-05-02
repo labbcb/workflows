@@ -2,14 +2,14 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-id: "STAR" 
+id: "STAR"
 label: Spliced Transcripts Alignment to a Reference
 
 requirements:
   InitialWorkDirRequirement:
     listing: $(inputs.index_files)
   DockerRequirement:
-    dockerPull: welliton/star:v2.5.3a
+    dockerPull: welliton/star:2.5.3a
 
 baseCommand: [STAR, --runMode, alignReads, --genomeDir, .]
 
@@ -47,7 +47,7 @@ outputs:
     type: File
     outputBinding:
       glob: "$(inputs.outFileNamePrefix)Log.out"
-  log_peogress:
+  log_progress:
     type: File
     outputBinding:
       glob: "$(inputs.outFileNamePrefix)Log.progress.out"
