@@ -1,4 +1,4 @@
-FROM welliton/r:3.4.2
+FROM welliton/r-base:3.4.2
 
 LABEL maintainer="well309@gmail.com"
 
