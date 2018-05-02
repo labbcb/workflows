@@ -1,0 +1,22 @@
+{
+  "WGBS.filesR1": "Array[File]",
+  "WGBS.bowtie1": "(optional) Boolean",
+  "WGBS.unmapped": "(optional) Boolean",
+  "WGBS.trim1": "(optional) Boolean",
+  "WGBS.TrimGalorePaired.clipR1": "(optional) Int?",
+  "WGBS.seedmms": "(optional) Int",
+  "WGBS.TrimGalorePaired.maxLength": "(optional) Int?",
+  "WGBS.TrimGalorePaired.maxN": "(optional) Int?",
+  "WGBS.TrimGalorePaired.threePrimeClipR1": "(optional) Int?",
+  "WGBS.paired": "(optional) Boolean",
+  "WGBS.illumina": "(optional) Boolean",
+  "WGBS.TrimGalorePaired.adapter": "(optional) String?",
+  "WGBS.bedGraph": "(optional) Boolean",
+  "WGBS.ambiguous": "(optional) Boolean",
+  "WGBS.TrimGalorePaired.adapter2": "(optional) String?",
+  "WGBS.TrimGalorePaired.threePrimeClipR2": "(optional) Int?",
+  "WGBS.TrimGalorePaired.clipR2": "(optional) Int?",
+  "WGBS.genomeFiles": "Array[File]",
+  "WGBS.bam": "(optional) Boolean",
+  "WGBS.filesR2": "Array[File]"
+}
