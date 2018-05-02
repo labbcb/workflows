@@ -2,14 +2,14 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-id: "fastqc" 
+id: "fastqc"
 label: "A high throughput sequence QC analysis tool"
 doc: |
   FastQC aims to provide a simple way to do some quality control checks on raw
   sequence data coming from high throughput sequencing pipelines. It provides a
   modular set of analyses which you can use to give a quick impression of
   whether your data has any problems of which you should be aware before doing
-  any further analysis. 
+  any further analysis.
 
 baseCommand: fastqc
 
@@ -17,7 +17,7 @@ requirements:
   InitialWorkDirRequirement:
     listing: [$(inputs.file)]
   DockerRequirement:
-    dockerPull: welliton/fastqc:v0.11.6
+    dockerPull: welliton/fastqc:0.11.6
 
 inputs:
 
@@ -56,7 +56,7 @@ inputs:
       prefix: --extract
       position: 1
     doc: |
-      If set then the zipped output file will be uncompressed in the same 
+      If set then the zipped output file will be uncompressed in the same
       directory after it has been created.
   nogroup:
     type: boolean

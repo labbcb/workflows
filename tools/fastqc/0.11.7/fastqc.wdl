@@ -32,7 +32,7 @@ task FastQC {
     }
 
     runtime {
-        docker: "welliton/fastqc:0.11.6"
+        docker: "welliton/fastqc:0.11.7"
     }
 
     output {
