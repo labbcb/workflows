@@ -1,0 +1,15 @@
+{
+  "QA.FastQC.adapters": "(optional) File?",
+  "QA.FastQC.nogroup": "(optional) Boolean?",
+  "QA.FastQC.limits": "(optional) File?",
+  "QA.FastQC.min_length": "(optional) Int?",
+  "QA.FastQC.casava": "(optional) Boolean?",
+  "QA.FastQC.nano": "(optional) Boolean?",
+  "QA.FastQC.threads": "(optional) Int?",
+  "QA.FastQC.format": "(optional) String?",
+  "QA.files": "Array[File]+",
+  "QA.groups": "Array[String]+",
+  "QA.FastQC.quiet": "(optional) Boolean?",
+  "QA.FastQC.nofilter": "(optional) Boolean?",
+  "QA.FastQC.contaminants": "(optional) File?"
+}
