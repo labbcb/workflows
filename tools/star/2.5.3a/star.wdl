@@ -13,8 +13,8 @@ task GenomeGenerate {
   }
 
   runtime {
-		docker: "welliton/star:2.5.3a"
-	}
+    docker: "welliton/star:2.5.3a"
+  }
 }
 
 task AlignReads {
@@ -37,6 +37,6 @@ task AlignReads {
   }
 
   runtime {
-		docker: "welliton/star:2.5.3a"
-	}
+    docker: "welliton/star:2.5.3a"
+  }
 }
