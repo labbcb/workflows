@@ -39,8 +39,6 @@ task BismarkPaired {
   Boolean unmapped = false
   Boolean ambiguous = false
 
-
-
   command {
     mv ${sep=' ' genomeFiles} .
     mkdir Bisulfite_Genome
@@ -60,8 +58,8 @@ task BismarkPaired {
   }
 
   output {
-    File outputFile = sub(basename(pairedFiles.left), ".fastq.gz|.fq.gz|.fastq|.fq$", "_bismark_pe.bam")
-    File reportFile = sub(basename(pairedFiles.left), ".fastq.gz|.fq.gz|.fastq|.fq$", "_bismark_PE_report.txt")
+    File outputFile = glob("*_bismark_pe.bam")[1]
+    File reportFile = glob("*_bismark_PE_report.txt")[1]
     Pair[File, File] ambiguousFiles = (
       "${basename(pairedFiles.left)}_ambiguous_reads_1.fq.gz",
       "${basename(pairedFiles.right)}_ambiguous_reads_2.fq.gz")
