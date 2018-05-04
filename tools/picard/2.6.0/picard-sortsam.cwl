@@ -20,7 +20,7 @@ baseCommand: SortSam
 
 hints:
   DockerRequirement:
-    dockerPull: welliton/picard:v2.6.0
+    dockerPull: welliton/picard:2.6.0
 
 inputs:
   input:
