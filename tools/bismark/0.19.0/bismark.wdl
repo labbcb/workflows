@@ -58,8 +58,8 @@ task BismarkPaired {
   }
 
   output {
-    File outputFile = glob("*_bismark_pe.bam")[1]
-    File reportFile = glob("*_bismark_PE_report.txt")[1]
+    File outputFile = glob("*_pe.bam")[1]
+    File reportFile = glob("*_PE_report.txt")[1]
     Pair[File, File] ambiguousFiles = (
       "${basename(pairedFiles.left)}_ambiguous_reads_1.fq.gz",
       "${basename(pairedFiles.right)}_ambiguous_reads_2.fq.gz")
