@@ -1,4 +1,4 @@
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/trimgalore/0.4.4/trimgalore.wdl" as trimgalore
+import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/trimgalore/0.4.5/trimgalore.wdl" as trimgalore
 import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/bismark/0.19.0/bismark.wdl" as bismark
 
 workflow WGBS {
@@ -10,12 +10,11 @@ workflow WGBS {
   Array[File] genomeFiles
 
   # Read Trimming
-  Boolean trim1 = true
   Boolean illumina = true
+  Int clipR1 = 8
+  Int clipR2 = 8
 
   # Read Alignment
-  Int seedmms = 1
-  Boolean bowtie1 = true
   Boolean unmapped = true
   Boolean ambiguous = true
 
@@ -26,48 +25,40 @@ workflow WGBS {
   # Methylation Quantification
   Boolean bedGraph = true
 
+  call bismark.GenomePreparation {
+    input:
+      genomeFiles = genomeFiles
+  }
+
   scatter (pairedFiles in zip(filesR1, filesR2)) {
  	  call trimgalore.TrimGalorePaired {
       input:
         pairedFiles = pairedFiles,
-        trim1 = trim1,
-        illumina = illumina
+        illumina = illumina,
+        clipR1 = clipR1,
+	      clipR2 = clipR2
     }
-  }
 
-  call bismark.GenomePreparation {
-    input:
-      genomeFiles = genomeFiles,
-      bowtie1 = bowtie1
-  }
-
-  scatter (pairedFiles in TrimGalorePaired.trimFiles) {
     call bismark.BismarkPaired {
       input:
         genomeFiles = genomeFiles,
         indexFilesCT = GenomePreparation.indexFilesCT,
         indexFilesGA = GenomePreparation.indexFilesGA,
-        pairedFiles = pairedFiles,
-        seedmms = seedmms,
-        bowtie1 = bowtie1,
+        pairedFiles = TrimGalorePaired.trimFiles,
         unmapped = unmapped,
         ambiguous = ambiguous
       }
-  }
 
-  scatter (file in BismarkPaired.outputFile) {
     call bismark.Deduplicate {
       input:
-        file = file,
+        file = BismarkPaired.outputFile,
         paired = paired,
         bam = bam
     }
-  }
 
-  scatter (file in Deduplicate.outputFile) {
     call bismark.MethylationExtractor {
       input:
-        file = file,
+        file = Deduplicate.outputFile,
         paired = paired,
         bedGraph = bedGraph
     }
