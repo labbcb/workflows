@@ -1,0 +1,19 @@
+{
+  "RNAseq.TrimGalorePaired.threePrimeClipR1": "(optional) Int?",
+  "RNAseq.gtfFile": "File",
+  "RNAseq.format": "(optional) String",
+  "RNAseq.TrimGalorePaired.adapter2": "(optional) String?",
+  "RNAseq.gzip": "(optional) Boolean",
+  "RNAseq.TrimGalorePaired.clipR1": "(optional) Int?",
+  "RNAseq.stranded": "(optional) String",
+  "RNAseq.TrimGalorePaired.adapter": "(optional) String?",
+  "RNAseq.filesR1": "Array[File]",
+  "RNAseq.TrimGalorePaired.maxLength": "(optional) Int?",
+  "RNAseq.genomeFiles": "Array[File]",
+  "RNAseq.illumina": "(optional) Boolean",
+  "RNAseq.filesR2": "Array[File]",
+  "RNAseq.TrimGalorePaired.threePrimeClipR2": "(optional) Int?",
+  "RNAseq.TrimGalorePaired.maxN": "(optional) Int?",
+  "RNAseq.TrimGalorePaired.clipR2": "(optional) Int?",
+  "RNAseq.GenomeGenerate.gtfFile": "(optional) File?"
+}
