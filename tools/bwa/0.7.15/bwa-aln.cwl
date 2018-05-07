@@ -8,7 +8,7 @@ baseCommand: [bwa, aln]
 
 hints:
   DockerRequirement:
-    dockerPull: welliton/bwa:v0.7.15
+    dockerPull: welliton/bwa:0.7.15
 
 inputs:
   prefix:

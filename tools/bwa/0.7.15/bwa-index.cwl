@@ -12,7 +12,7 @@ requirements:
 
 hints:
   DockerRequirement:
-    dockerPull: welliton/bwa:v0.7.15
+    dockerPull: welliton/bwa:0.7.15
 
 inputs:
   file:
@@ -37,7 +37,7 @@ inputs:
   sixtyfour:
     type: boolean
     default: false
-    doc: index files named as <in.fasta>.64.* instead of <in.fasta>.* 
+    doc: index files named as <in.fasta>.64.* instead of <in.fasta>.*
     inputBinding:
       prefix: "-6"
 

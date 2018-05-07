@@ -8,7 +8,7 @@ baseCommand: [bwa, mem]
 
 hints:
   DockerRequirement:
-    dockerPull: welliton/bwa:v0.7.15
+    dockerPull: welliton/bwa:0.7.15
 
 inputs:
   idxbase:
@@ -161,7 +161,7 @@ inputs:
     type: boolean
     default: false
     doc: |
-      treat ALT contigs as part of the primary assembly 
+      treat ALT contigs as part of the primary assembly
       (i.e. ignore <idxbase>.alt file)
     inputBinding:
       prefix: -j
