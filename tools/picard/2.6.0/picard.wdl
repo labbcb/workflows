@@ -19,8 +19,8 @@ task CollectHsMetrics {
   File file
   File indexFile
   String outputFileName
-  File targetIntervals
-  File baitIntervals
+  File targetIntervalsFile
+  File baitIntervalsFile
   String verbosity = "INFO"
 
   File? genomeFile
@@ -30,8 +30,8 @@ task CollectHsMetrics {
   command {
     CollectHsMetrics INPUT=${file} \
       OUTPUT=${outputFileName} \
-      TARGET_INTERVALS=${targetIntervals} \
-      BAIT_INTERVALS=${baitIntervals} \
+      TARGET_INTERVALS=${targetIntervalsFile} \
+      BAIT_INTERVALS=${baitIntervalsFile} \
       REFERENCE_SEQUENCE=${genomeFile} \
       ${'PER_TARGET_COVERAGE=' + perTargetCoverage} \
       ${true='VERBOSITY=true' false='' verbosity}
@@ -54,7 +54,7 @@ task CreateSequenceDictionary {
   String? genomeAssembly
   String? uri
   String? species
-  Boolean truncateNamesAtWhitespace
+  Boolean? truncateNamesAtWhitespace
   Int? numSequences
 
   command {
