@@ -17,24 +17,28 @@ task BuildBamIndex {
 
 task CollectHsMetrics {
   File file
-  String output
+  File indexFile
+  String outputFileName
   File targetIntervals
   File baitIntervals
+  String verbosity = "INFO"
 
-  File? referenceSequence
+  File? genomeFile
   File? referenceIndex
   String? perTargetCoverage
 
   command {
-    CollectHsMetrics INPUT=${file} OUTPUT=${output} \
+    CollectHsMetrics INPUT=${file} \
+      OUTPUT=${outputFileName} \
       TARGET_INTERVALS=${targetIntervals} \
       BAIT_INTERVALS=${baitIntervals} \
-      REFERENCE_SEQUENCE=${referenceSequence} \
-      ${'PER_TARGET_COVERAGE=' + perTargetCoverage}
+      REFERENCE_SEQUENCE=${genomeFile} \
+      ${'PER_TARGET_COVERAGE=' + perTargetCoverage} \
+      ${true='VERBOSITY=true' false='' verbosity}
   }
 
   output {
-    File outputFile = output
+    File outputFile = outputFileName
     File? perTergetCoverageFile = perTargetCoverage
   }
 
@@ -44,21 +48,28 @@ task CollectHsMetrics {
 }
 
 task CreateSequenceDictionary {
-  File reference
-  String output
+  File genomeFile
+  String outputFileName
 
   String? genomeAssembly
   String? uri
   String? species
-  String? truncateAtWhitespace
+  Boolean truncateNamesAtWhitespace
   Int? numSequences
 
   command {
     CreateSequenceDictionary \
-      REFERENCE=${reference} \
-      OUTPUT=${output} \
+      REFERENCE=${genomeFile} \
+      OUTPUT=${outputFileName} \
       ${'GENOME_ASSEMBLY=' + genomeAssembly} \
+      ${'URI=' + uri} \
+      ${'SPECIES=' + species} \
+      ${true='TRUNCATE_NAMES_AT_WHITESPACE=true' false='' truncateNamesAtWhitespace} \
+      ${'NUM_SEQUENCES=' + numSequences}
+  }
 
+  output {
+    File dictionaryFile = outputFileName
   }
 
   runtime {
@@ -68,20 +79,20 @@ task CreateSequenceDictionary {
 
 task MarkDuplicates {
   File file
-  String output
-  String metricsFile?
+  String outputFileName
+  String? metricsFileName
   Boolean removeDuplicates = false
 
   command {
     MarkDuplicates INPUT=${file} \
-      OUTPUT=${output} \
-      ${'METRICS_FILE=' + metricsFile} \
+      OUTPUT=${outputFileName} \
+      ${'METRICS_FILE=' + metricsFileName} \
       ${true='REMOVE_DUPLICATES=true' false='' removeDuplicates}
   }
 
   output {
-    File outputFile = output
-    File? metricsFile = metricsFile
+    File outputFile = outputFileName
+    File? metricsFile = metricsFileName
   }
 
   runtime {
@@ -91,17 +102,17 @@ task MarkDuplicates {
 
 task SortSam {
   File file
-  String output
+  String outputFileName
   String? sortOrder
 
   command {
     SortSam INPUT=${file} \
-      OUTPUT=${output} \
+      OUTPUT=${outputFileName} \
       ${'SORT_ORDER=' + sortOrder}
   }
 
   output {
-    File outputFile = output
+    File outputFile = outputFileName
   }
 
   runtime {
@@ -111,16 +122,19 @@ task SortSam {
 
 task ValidateSamFile {
   File file
-  String output
+  File indexFile
+  String outputFileName
   String? mode
+  Boolean validateIndex = true
 
   command {
-    ValidateSamFile INPUT=${input} \
-      OUTPUT=${output} \
-      ${'MODE=' + mode}
+    ValidateSamFile INPUT=${file} \
+      OUTPUT=${outputFileName} \
+      ${'MODE=' + mode} \
+      VALIDATE_INDEX=${validateIndex}
   }
 
   output {
-    File outputFile = output
+    File outputFile = outputFileName
   }
 }
