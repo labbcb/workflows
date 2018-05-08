@@ -11,7 +11,7 @@ task BuildBamIndex {
   }
 
   runtime {
-    docker: "welliton/picard:0.19.0"
+    docker: "welliton/picard:2.6.0"
   }
 }
 
@@ -43,7 +43,7 @@ task CollectHsMetrics {
   }
 
   runtime {
-    docker: "welliton/picard:0.19.0"
+    docker: "welliton/picard:2.6.0"
   }
 }
 
@@ -73,7 +73,7 @@ task CreateSequenceDictionary {
   }
 
   runtime {
-    docker: "welliton/picard:0.19.0"
+    docker: "welliton/picard:2.6.0"
   }
 }
 
@@ -96,7 +96,7 @@ task MarkDuplicates {
   }
 
   runtime {
-    docker: "welliton/picard:0.19.0"
+    docker: "welliton/picard:2.6.0"
   }
 }
 
@@ -116,7 +116,7 @@ task SortSam {
   }
 
   runtime {
-    docker: "welliton/picard:0.19.0"
+    docker: "welliton/picard:2.6.0"
   }
 }
 
