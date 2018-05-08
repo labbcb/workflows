@@ -15,7 +15,7 @@ doc: |
   interval files that correspond to the capture kit that was used to generate
   the capture libraries for sequencing, which can generally be obtained from the
   kit manufacturer. If the baits and target intervals are provided in BED format,
-  you can convert them to the Picard interval_list format using Picard's
+  you can convert them to the Picard interval_list format using Picards
   BedToInterval tool.
   If a reference sequence is provided, this program will calculate both
   AT_DROPOUT and GC_DROPOUT metrics. Dropout metrics are an attempt to measure
@@ -28,7 +28,7 @@ doc: |
   information for every target interval, use the PER_TARGET_COVERAGE option.
   Metrics labeled as percentages are actually expressed as fractions!
 
-baseCommand: CollectHsMetrics
+baseCommand: [java, -jar, /usr/picard.jar, CollectHsMetrics]
 
 requirements:
   InitialWorkDirRequirement:

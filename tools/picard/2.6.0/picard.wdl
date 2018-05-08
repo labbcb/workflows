@@ -2,12 +2,11 @@ task BuildBamIndex {
   File file
 
   command {
-    mv ${file} .
-    BuildBamIndex INPUT=${file}
+    java -jar /usr/picard.jar BuildBamIndex INPUT=${file}
   }
 
   output {
-    File indexFile = sub(basename(file), ".bam$", ".bai")
+    File indexFile = sub(file, ".bam$", ".bai")
   }
 
   runtime {
@@ -28,7 +27,7 @@ task CollectHsMetrics {
   String? perTargetCoverage
 
   command {
-    CollectHsMetrics INPUT=${file} \
+    java -jar /usr/picard.jar CollectHsMetrics INPUT=${file} \
       OUTPUT=${outputFileName} \
       TARGET_INTERVALS=${targetIntervalsFile} \
       BAIT_INTERVALS=${baitIntervalsFile} \
@@ -58,7 +57,7 @@ task CreateSequenceDictionary {
   Int? numSequences
 
   command {
-    CreateSequenceDictionary \
+    java -jar /usr/picard.jar CreateSequenceDictionary \
       REFERENCE=${genomeFile} \
       OUTPUT=${outputFileName} \
       ${'GENOME_ASSEMBLY=' + genomeAssembly} \
@@ -84,7 +83,7 @@ task MarkDuplicates {
   Boolean removeDuplicates = false
 
   command {
-    MarkDuplicates INPUT=${file} \
+    java -jar /usr/picard.jar MarkDuplicates INPUT=${file} \
       OUTPUT=${outputFileName} \
       ${'METRICS_FILE=' + metricsFileName} \
       ${true='REMOVE_DUPLICATES=true' false='' removeDuplicates}
@@ -106,7 +105,7 @@ task SortSam {
   String? sortOrder
 
   command {
-    SortSam INPUT=${file} \
+    java -jar /usr/picard.jar SortSam INPUT=${file} \
       OUTPUT=${outputFileName} \
       ${'SORT_ORDER=' + sortOrder}
   }
@@ -128,7 +127,7 @@ task ValidateSamFile {
   Boolean validateIndex = true
 
   command {
-    ValidateSamFile INPUT=${file} \
+    java -jar /usr/picard.jar ValidateSamFile INPUT=${file} \
       OUTPUT=${outputFileName} \
       ${'MODE=' + mode} \
       VALIDATE_INDEX=${validateIndex}

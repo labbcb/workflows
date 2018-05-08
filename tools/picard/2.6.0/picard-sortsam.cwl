@@ -16,7 +16,7 @@ doc: |
   queryname field but the alignments are not necessarily sorted within these
   groups.  Reads having the same queryname are derived from the same template.
 
-baseCommand: SortSam
+baseCommand: [java, -jar, /usr/picard.jar, SortSam]
 
 hints:
   DockerRequirement:

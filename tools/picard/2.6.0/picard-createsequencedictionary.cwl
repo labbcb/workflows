@@ -3,7 +3,7 @@ class: CommandLineTool
 id: picard-createsequencedictionary
 label: "Picard CreateSequenceDictionary"
 
-baseCommand: CreateSequenceDictionary
+baseCommand: [java, -jar, /usr/picard.jar, CreateSequenceDictionary]
 
 requirements:
   InitialWorkDirRequirement:

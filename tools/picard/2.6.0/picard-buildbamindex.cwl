@@ -8,7 +8,7 @@ doc: |
   database. Note that this tool cannot be run on SAM files, and that the input
   BAM file must be sorted in coordinate order.
 
-baseCommand: BuildBamIndex
+baseCommand: [java, -jar, /usr/picard.jar, BuildBamIndex]
 
 requirements:
   InitialWorkDirRequirement:

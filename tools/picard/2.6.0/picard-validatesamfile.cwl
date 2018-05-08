@@ -17,7 +17,7 @@ doc: |
   After identifying and fixing your 'warnings/errors', we recommend that you
   rerun this tool to validate your SAM/BAM file prior to proceeding with your downstream analysis.  This will verify that all problems in your file have been addressed.
 
-baseCommand: ValidateSamFile
+baseCommand: [java, -jar, /usr/picard.jar, ValidateSamFile]
 
 hints:
   DockerRequirement:

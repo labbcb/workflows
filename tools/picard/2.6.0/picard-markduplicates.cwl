@@ -7,7 +7,7 @@ doc: |
   BAM or SAM file, where duplicate reads are defined as originating from a
   single fragment of DNA.
 
-baseCommand: MarkDuplicates
+baseCommand: [java, -jar, /usr/picard.jar, MarkDuplicates]
 
 hints:
   DockerRequirement:
