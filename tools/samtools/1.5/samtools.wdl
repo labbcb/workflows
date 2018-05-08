@@ -6,7 +6,7 @@ task Faidx {
   }
 
   output {
-    File genomeIndexFile = "${basename(genomeFile)}.fai"
+    File genomeIndexFile = "${genomeFile}.fai"
   }
 
   runtime {
