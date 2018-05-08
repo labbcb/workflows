@@ -10,6 +10,6 @@ task Faidx {
   }
 
   runtime {
-    docker: "welliton/samtools:v1.5"
+    docker: "welliton/samtools:1.5"
   }
 }

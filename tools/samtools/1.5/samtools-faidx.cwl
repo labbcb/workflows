@@ -18,7 +18,7 @@ requirements:
   InitialWorkDirRequirement:
     listing: [ $(inputs.ref_fasta) ]
   DockerRequirement:
-    dockerPull: welliton/samtools:v1.5
+    dockerPull: welliton/samtools:1.5
 
 inputs:
   ref_fasta:
