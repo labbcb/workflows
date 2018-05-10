@@ -2,11 +2,12 @@ task Faidx {
   File genomeFile
 
   command {
-    samtools faidx ${genomeFile}
+    ln -s ${genomeFile} -t .
+    samtools faidx ${basename(genomeFile)}
   }
 
   output {
-    File genomeIndexFile = "${genomeFile}.fai"
+    File genomeIndexFile = "${basename(genomeFile)}.fai"
   }
 
   runtime {
