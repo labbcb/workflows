@@ -12,11 +12,12 @@ task BaseRecalibrator {
   File? BQSR
 
   command {
+    ln -s ${file} ${indexFile} ${genomeFile} ${genomeIndexFile} ${dictionaryFile} -t .
     java -jar /usr/GenomeAnalysisTK.jar --analysis_type BaseRecalibrator \
       --input_file ${basename(file)} \
       --reference_sequence ${basename(genomeFile)} \
       --out ${outputFileName} \
-      --knownSites ${sep='--knownSites ' knownSitesFiles} \
+      --knownSites ${sep=' --knownSites ' knownSitesFiles} \
       ${'--intervals ' + intervalsFile} \
       ${'--interval_padding ' + intervalPadding} \
       ${'--BQSR ' + BQSR}
@@ -42,11 +43,12 @@ task AnalyzeCovariates {
   Int? intervalPadding
 
   command {
+    ln -s ${genomeFile} ${genomeIndexFile} ${dictionaryFile} -t .
     java -jar /usr/GenomeAnalysisTK.jar --analysis_type AnalyzeCovariates \
       --beforeReportFile ${beforeReportFile} \
       --afterReportFile ${afterReportFile} \
-      --reference_sequence ${genomeFile} \
-      --plotsReportFile ${outputFileName}
+      --reference_sequence ${basename(genomeFile)} \
+      --plotsReportFile ${outputFileName} \
       ${'--intervals ' + intervalsFile} \
       ${'--interval_padding ' + intervalPadding}
   }
@@ -72,9 +74,10 @@ task PrintReads {
   File? BQSR
 
   command {
+    ln -s ${file} ${indexFile} ${genomeFile} ${genomeIndexFile} ${dictionaryFile} -t .
     java -jar /usr/GenomeAnalysisTK.jar --analysis_type PrintReads \
-      --input_file ${file} \
-      --reference_sequence ${file} \
+      --input_file ${basename(file)} \
+      --reference_sequence ${basename(genomeFile)} \
       --out ${outputFileName} \
       ${'--intervals ' + intervalsFile} \
       ${'--interval_padding ' + intervalPadding} \
@@ -108,15 +111,16 @@ task HaplotypeCaller {
   Int? variantIndexParameter
 
   command {
+    ln -s ${file} ${indexFile} ${genomeFile} ${genomeIndexFile} ${dictionaryFile} -t .
     java -jar /usr/GenomeAnalysisTK.jar --analysis_type HaplotypeCaller \
       --input_file ${file} \
-      --reference_sequence ${genomeFile} \
+      --reference_sequence ${basename(genomeFile)} \
       --out ${outputFileName} \
       ${'--intervals ' + intervalsFile} \
-      ${'--intervalPadding ' + intervalPadding} \
+      ${'--interval_padding ' + intervalPadding} \
       ${'--genotyping_mode ' + genotypingMode} \
-      ${'--stand_call_conf ' + standCallConf} \
-      ${'--stand_emit_conf ' + standEmitConf} \
+      ${'-stand_call_conf ' + standCallConf} \
+      ${'-stand_emit_conf ' + standEmitConf} \
       ${'--emitRefConfidence ' + emitRefConfidence} \
       ${'--variant_index_type ' + variantIndexType} \
       ${'--variant_index_parameter ' + variantIndexParameter}
