@@ -3,12 +3,13 @@ task Index {
   String? algorithm
 
   command {
-    bwa index ${genomeFile} \
+    ln -s ${genomeFile} -t .
+    bwa index ${basename(genomeFile)} \
       ${'-a ' + algorithm}
   }
 
   output {
-    Array[File] indexFiles = glob("*")
+    Array[File] indexFiles = glob("${basename(genomeFile)}.*")
   }
 
   runtime {
@@ -20,21 +21,26 @@ task AlignMem {
   File genomeFile
   Array[File] indexFiles
   Pair[File, File] pairedFiles
+  String outputFileName
 
   Boolean M = false
   String? R
   Int? t
 
   command {
-    mv ${sep=' ' indexFiles} .
+    ln -s ${sep=' ' indexFiles} -t .
     bwa mem ${basename(genomeFile)} \
       ${pairedFiles.left} ${pairedFiles.right} \
       ${true='-M' false='' M} \
       ${'-R ' + R} \
-      ${'-t ' + t}
+      ${'-t ' + t} > ${outputFileName}
   }
 
   output {
-    File alignFile = stdout()
+    File alignFile = outputFileName
+  }
+
+  runtime {
+    docker: "welliton/bwa:0.7.15"
   }
 }
