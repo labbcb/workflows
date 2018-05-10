@@ -2,11 +2,12 @@ task BuildBamIndex {
   File file
 
   command {
-    java -jar /usr/picard.jar BuildBamIndex INPUT=${file}
+    ln -s ${file} -t .
+    java -jar /usr/picard.jar BuildBamIndex INPUT=${basename(file)}
   }
 
   output {
-    File indexFile = sub(file, ".bam$", ".bai")
+    File indexFile = sub(basename(file), ".bam$", ".bai")
   }
 
   runtime {
@@ -22,18 +23,20 @@ task CollectHsMetrics {
   File baitIntervalsFile
   String verbosity = "INFO"
 
-  File? genomeFile
-  File? referenceIndex
+  File genomeFile
+  File genomeIndexFile
   String? perTargetCoverage
 
   command {
-    java -jar /usr/picard.jar CollectHsMetrics INPUT=${file} \
+    ln -s ${file} ${indexFile} ${genomeFile} ${genomeIndexFile} -t .
+    java -jar /usr/picard.jar CollectHsMetrics \
+      INPUT=${basename(file)} \
       OUTPUT=${outputFileName} \
       TARGET_INTERVALS=${targetIntervalsFile} \
       BAIT_INTERVALS=${baitIntervalsFile} \
-      REFERENCE_SEQUENCE=${genomeFile} \
+      REFERENCE_SEQUENCE=${basename(genomeFile)} \
       ${'PER_TARGET_COVERAGE=' + perTargetCoverage} \
-      ${true='VERBOSITY=true' false='' verbosity}
+      ${'VERBOSITY=' + verbosity}
   }
 
   output {
@@ -127,7 +130,9 @@ task ValidateSamFile {
   Boolean validateIndex = true
 
   command {
-    java -jar /usr/picard.jar ValidateSamFile INPUT=${file} \
+    ln -s ${file} ${indexFile} -t .
+    java -jar /usr/picard.jar ValidateSamFile \
+      INPUT=${basename(file)} \
       OUTPUT=${outputFileName} \
       ${'MODE=' + mode} \
       VALIDATE_INDEX=${validateIndex}
@@ -135,5 +140,9 @@ task ValidateSamFile {
 
   output {
     File outputFile = outputFileName
+  }
+
+  runtime {
+    docker: "welliton/picard:2.6.0"
   }
 }
