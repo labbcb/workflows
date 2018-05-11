@@ -29,11 +29,13 @@ task AlignMem {
 
   command {
     ln -s ${sep=' ' indexFiles} -t .
-    bwa mem ${basename(genomeFile)} \
-      ${pairedFiles.left} ${pairedFiles.right} \
+    bwa mem \
       ${true='-M' false='' M} \
       ${'-R ' + R} \
-      ${'-t ' + t} > ${outputFileName}
+      ${'-t ' + t} \
+      ${basename(genomeFile)} \
+      ${pairedFiles.left} \
+      ${pairedFiles.right} > ${outputFileName}
   }
 
   output {
