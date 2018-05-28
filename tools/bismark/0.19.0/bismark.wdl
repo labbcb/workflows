@@ -99,11 +99,15 @@ task MethylationExtractor {
   File file
   Boolean paired = false
   Boolean bedGraph = false
+  Boolean counts = false
+  Boolean zeroBased = false
 
   command {
     bismark_methylation_extractor ${file} \
       ${true='--paired-end' false='--single-end' paired} \
-      ${true='--bedGraph' false='' bedGraph}
+      ${true='--bedGraph' false='' bedGraph} \
+      ${true='--counts' false='' counts} \
+      ${true='--zero_based' false='' zeroBased}
   }
 
   output {
