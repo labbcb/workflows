@@ -146,3 +146,61 @@ task ValidateSamFile {
     docker: "welliton/picard:2.6.0"
   }
 }
+
+task FastqToSam {
+  File fileR1
+  File? fileR2
+  Boolean useSequentialFastqs = false
+  String? qualityFormat
+  String outputFileName
+  String? readGroupName
+  String sampleName
+  String? libraryName
+  String? platformUnit
+  String? platform
+  String? sequencingCenter
+  Int? predictedInsertSize
+  String? programGroup
+  String? platformModel
+  String? comment
+  String? description
+  String? runDate
+  String sortOrder = "queryname"
+  Int minQ = 0
+  Int maxQ = 93
+  Boolean allowAndIgnoreEmptyLines = false
+
+  command {
+    java -jar /usr/picard.jar FastqToSam \
+      FASTQ=${fileR1} \
+      ${'FASTQ2=' + fileR2} \
+      ${'USE_SEQUENTIAL_FASTQS=' + useSequentialFastqs} \
+      ${'QUALITY_FORMAT=' + qualityFormat} \
+      OUTPUT=${outputFileName} \
+      ${'READ_GROUP_NAME=' + readGroupName} \
+      SAMPLE_NAME=${sampleName} \
+      ${'LIBRARY_NAME=' + libraryName} \
+      ${'PLATFORM_UNIT=' + platformUnit} \
+      ${'PLATFORM=' + platform} \
+      ${'SEQUENCING_CENTER=' + sequencingCenter} \
+      ${'PREDICTED_INSERT_SIZE=' + predictedInsertSize} \
+      ${'PROGRAM_GROUP=' + programGroup} \
+      ${'PLATFORM_MODEL=' + platformModel} \
+      ${'COMMENT=' + comment} \
+      ${'DESCRIPTION=' + description} \
+      ${'RUN_DATE=' + runDate} \
+      SORT_ORDER=${sortOrder} \
+      MIN_Q=${minQ} \
+      MAX_Q=${maxQ} \
+      ALLOW_AND_IGNORE_EMPTY_LINES=${allowAndIgnoreEmptyLines}
+  }
+
+  output {
+    File outputFile = outputFileName
+  }
+
+  runtime {
+    docker: "welliton/picard:2.6.0"
+  }
+
+}
