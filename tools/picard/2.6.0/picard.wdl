@@ -174,7 +174,7 @@ task FastqToSam {
     java -jar /usr/picard.jar FastqToSam \
       FASTQ=${fileR1} \
       ${'FASTQ2=' + fileR2} \
-      ${'USE_SEQUENTIAL_FASTQS=' + useSequentialFastqs} \
+      ${true='USE_SEQUENTIAL_FASTQS=true' false='' useSequentialFastqs} \
       ${'QUALITY_FORMAT=' + qualityFormat} \
       OUTPUT=${outputFileName} \
       ${'READ_GROUP_NAME=' + readGroupName} \
@@ -192,7 +192,7 @@ task FastqToSam {
       SORT_ORDER=${sortOrder} \
       MIN_Q=${minQ} \
       MAX_Q=${maxQ} \
-      ALLOW_AND_IGNORE_EMPTY_LINES=${allowAndIgnoreEmptyLines}
+      ${true='ALLOW_AND_IGNORE_EMPTY_LINES=true' false='' allowAndIgnoreEmptyLines}
   }
 
   output {
