@@ -9,7 +9,12 @@ task Index {
   }
 
   output {
-    Array[File] indexFiles = glob("${basename(genomeFile)}.*")
+    File altFile = "${basename(genomeFile).alt"
+    File saFile = "${basename(genomeFile).sa"
+    File ambFile = "${basename(genomeFile).amb"
+    File bwtFile = "${basename(genomeFile).bwt"
+    File annFile = "${basename(genomeFile).ann"
+    File pacFile = "${basename(genomeFile).pac"
   }
 
   runtime {
