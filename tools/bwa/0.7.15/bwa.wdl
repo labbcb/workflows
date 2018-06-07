@@ -9,7 +9,6 @@ task Index {
   }
 
   output {
-    File altFile = "${basename(genomeFile).alt"
     File saFile = "${basename(genomeFile).sa"
     File ambFile = "${basename(genomeFile).amb"
     File bwtFile = "${basename(genomeFile).bwt"
