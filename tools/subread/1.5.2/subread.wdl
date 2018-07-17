@@ -31,4 +31,8 @@ task FeatureCounts {
     File outputFile = outputFileName
     File summaryFile = "${outputFileName}.summary"
   }
+
+  runtime {
+    docker: "welliton/subread:1.5.2"
+  }
 }
