@@ -1,8 +1,13 @@
-WOMTOOL_VERSION=31
+#!/usr/bin/env bash
+WOMTOOL_VERSION="31"
 
 if [ ! -f womtool.jar ]
 then
-  curl -fsSL https://github.com/broadinstitute/cromwell/releases/download/31/womtool-${WOMTOOL_VERSION}.jar -o womtool.jar
+  echo "Download WOMTOOL version ${WOMTOOL_VERSION}"
+  curl -fsSL "https://github.com/broadinstitute/cromwell/releases/download/${WOMTOOL_VERSION}/womtool-${WOMTOOL_VERSION}.jar" -o womtool.jar
+  if [ $? -ne 0 ]; then
+    exit 1
+  fi
 fi
 
 cd workflows/

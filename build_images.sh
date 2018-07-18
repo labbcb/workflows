@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd tools/
 for tool in */
 do
