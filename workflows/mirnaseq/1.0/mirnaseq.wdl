@@ -1,6 +1,6 @@
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/bowtie/1.2.0/bowtie.wdl" as bowtie
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/trimgalore/0.4.4/trimgalore.wdl" as trimgalore
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/subread/1.5.2/subread.wdl" as subread
+import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/trimgalore/0.5.0/trimgalore.wdl" as trimgalore
+import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/bowtie/1.2.2/bowtie.wdl" as bowtie
+import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/subread/1.6.2/subread.wdl" as subread
 
 workflow MirnaSeq {
   
@@ -23,7 +23,6 @@ workflow MirnaSeq {
   Boolean sam = true
   String featureType = "miRNA"
   String attributeType = "ID"
-  Boolean featureLevel = true
   Boolean overlaps = true
   Boolean multiMapping = true
   Int mappingQuality = 20
@@ -65,7 +64,6 @@ workflow MirnaSeq {
       annotationFile = annotationFile,
       featureType = featureType,
       attributeType = attributeType,
-      featureLevel = featureLevel,
       overlaps = overlaps,
       multiMapping = multiMapping,
       mappingQuality = mappingQuality,
