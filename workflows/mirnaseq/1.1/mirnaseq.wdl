@@ -21,7 +21,7 @@ workflow MirnaSeq {
   Boolean strata = true
   Boolean sam = true
   String featureType = "miRNA"
-  String attributeType = "Name"
+  String attributeType = "Alias"
   Boolean overlaps = true
   Boolean multiMapping = true
   Int mappingQuality = 20
