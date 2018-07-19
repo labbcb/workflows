@@ -36,8 +36,7 @@ task Align {
   Boolean strata = false
   Boolean sam = false
   Int threads = 1
-  File statsFileName = "alignment_stats.txt"
-  
+
   command {
     ln -s ${sep=' ' indexFiles} -t .
     bowtie \
@@ -49,12 +48,12 @@ task Align {
       --threads ${threads} \
       ${ebwtBase} \
       ${file} \
-      ${outputFileName} 2> ${statsFileName}
+      ${outputFileName}
   }
   
   output {
     File outputFile = outputFileName
-    File statsFile = statsFileName
+    File statsFile = stderr()
   }
   
   runtime {
@@ -72,7 +71,6 @@ task Align {
     strata: "If many valid alignments exist and are reportable and they fall into more than one alignment stratum, report only those alignments that fall into the best stratum."
     sam: "Print alignments in SAM format."
     threads: "Launch parallel search threads (default: 1)."
-    statsFileName: "File name for alignment statistics data (sterr)."
   }
   
   meta {
