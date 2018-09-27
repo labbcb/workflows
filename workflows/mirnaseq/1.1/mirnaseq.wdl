@@ -1,6 +1,6 @@
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/trimgalore/0.5.0/trimgalore.wdl" as trimgalore
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/bowtie/1.2.2/bowtie.wdl" as bowtie
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/subread/1.6.2/subread.wdl" as subread
+import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/trimgalore/0.5.0/trimgalore.wdl" as trimgalore
+import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/bowtie/1.2.2/bowtie.wdl" as bowtie
+import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/subread/1.6.2/subread.wdl" as subread
 
 workflow MirnaSeq {
   
