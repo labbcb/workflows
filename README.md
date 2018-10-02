@@ -1,2 +1,1 @@
-# rnnr
-Reproducible workflows for genomics research
+# Reproducible workflows for genomics research

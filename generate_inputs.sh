@@ -23,7 +23,7 @@ do
       continue
     fi
     echo "Generating inputs.json file for workflow ${workflow%/} version ${version%/}"
-    sed 's|https://raw.githubusercontent.com/labbcb/rnnr/master|../../..|g' < ${workflow%/}.wdl > tmp.wdl
+    sed 's|https://raw.githubusercontent.com/labbcb/workflows/master|../../..|g' < ${workflow%/}.wdl > tmp.wdl
     java -jar ../../../womtool.jar inputs tmp.wdl > inputs.json
     rm tmp.wdl
     cd ..
