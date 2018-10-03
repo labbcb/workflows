@@ -1,5 +1,5 @@
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/trimgalore/0.4.4/trimgalore.wdl" as trimgalore
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/bismark/0.14.5/bismark.wdl" as bismark
+import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/trimgalore/0.4.4/trimgalore.wdl" as trimgalore
+import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/bismark/0.14.5/bismark.wdl" as bismark
 
 workflow WGBS {
   # Raw Sequencing Reads

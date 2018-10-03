@@ -1,6 +1,6 @@
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/trimgalore/0.4.4/trimgalore.wdl" as trimgalore
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/star/2.5.3a/star.wdl" as star
-import "https://raw.githubusercontent.com/labbcb/rnnr/master/tools/htseq/0.9.1/htseq.wdl" as htseq
+import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/trimgalore/0.4.4/trimgalore.wdl" as trimgalore
+import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/star/2.5.3a/star.wdl" as star
+import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/htseq/0.9.1/htseq.wdl" as htseq
 
 workflow RNAseq {
 	# Raw Sequencing Reads
