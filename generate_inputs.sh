@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-WOMTOOL_VERSION="35"
+WOMTOOL_VERSION="36"
 
 if [ ! -f womtool.jar ]
 then
