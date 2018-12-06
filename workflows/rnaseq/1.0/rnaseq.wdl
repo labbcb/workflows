@@ -6,52 +6,52 @@ import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/htseq/0.
 workflow RNAseq {
 
     input {
-    	# Raw Sequencing Reads
-    	Array[File] filesR1
-    	Array[File] filesR2
+        # Raw Sequencing Reads
+        Array[File] filesR1
+        Array[File] filesR2
 
-    	# Reference Genome Files
-    	Array[File] genomeFiles
-    	File gtfFile
+        # Reference Genome Files
+        Array[File] genomeFiles
+        File gtfFile
 
-    	# Read Trimming
+        # Read Trimming
         Boolean illumina = true
-    	Boolean gzip = false
+        Boolean gzip = false
 
-    	# Gene Quantification
-    	String format = "bam"
-    	String stranded = "reverse"
+        # Gene Quantification
+        String format = "bam"
+        String stranded = "reverse"
     }
 
 
-	call star.GenomeGenerate {
-		input:
-			genomeFiles = genomeFiles
-	}
+    call star.GenomeGenerate {
+        input:
+            genomeFiles = genomeFiles
+    }
 
-	scatter (pairedFiles in zip(filesR1, filesR2)) {
-		call trimgalore.TrimGalorePaired {
+    scatter (pairedFiles in zip(filesR1, filesR2)) {
+        call trimgalore.TrimGalorePaired {
       input:
         pairedFiles = pairedFiles,
-				gzip = gzip
-		}
+                gzip = gzip
+        }
 
-		call star.AlignReads {
-			input:
-				indexFiles = GenomeGenerate.indexFiles,
-				pairedFiles = TrimGalorePaired.trimFiles
-		}
+        call star.AlignReads {
+            input:
+                indexFiles = GenomeGenerate.indexFiles,
+                pairedFiles = TrimGalorePaired.trimFiles
+        }
 
-		call htseq.Count {
-			input:
-				file = AlignReads.alignFile,
-				gtfFile = gtfFile,
-				format = format,
-				stranded = stranded
-		}
-	}
+        call htseq.Count {
+            input:
+                file = AlignReads.alignFile,
+                gtfFile = gtfFile,
+                format = format,
+                stranded = stranded
+        }
+    }
 
-	output {
-		Array[File] countFile = Count.countFile
-	}
+    output {
+        Array[File] countFile = Count.countFile
+    }
 }

@@ -3,19 +3,19 @@ version 1.0
 task Faidx {
 
     input {
-      File genomeFile
+        File genomeFile
     }
 
-  command {
-    ln -s ${genomeFile} -t .
-    samtools faidx ${basename(genomeFile)}
-  }
+    command {
+        ln -s ${genomeFile} -t .
+        samtools faidx ${basename(genomeFile)}
+    }
 
-  output {
-    File genomeIndexFile = "${basename(genomeFile)}.fai"
-  }
+    output {
+        File genomeIndexFile = "${basename(genomeFile)}.fai"
+    }
 
-  runtime {
-    docker: "welliton/samtools:1.5"
-  }
+    runtime {
+        docker: "welliton/samtools:1.5"
+    }
 }

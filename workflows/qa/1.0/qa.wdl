@@ -11,15 +11,15 @@ workflow QA {
     }
 
     call rqc.Rqc {
-    	input:
-    		files = files,
-    		groups = groups
+        input:
+            files = files,
+            groups = groups
     }
 
     scatter(file in files) {
         call fastqc.FastQC {
             input:
-            	file = file
+                file = file
         }
     }
 

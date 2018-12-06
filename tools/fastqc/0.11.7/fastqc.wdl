@@ -21,19 +21,19 @@ task FastQC {
 
     command {
         fastqc --outdir "." \
-        ${true='--casava' false='' casava} \
-        ${true='--nano' false='' nano} \
-        ${true='--nofilter' false='' nofilter} \
-        ${true='--extract' false='--noextract' extract} \
-        ${true='--nogroup' false='' nogroup} \
-        ${'--min_length ' + min_length} \
-        ${'--format ' + format} \
-        ${'--contaminants ' + contaminants} \
-        ${'--adapters ' + adapters} \
-        ${'--limits ' + limits} \
-        ${'--kmers ' + kmers} \
-        ${true='--quiet' false='' quiet} \
-        ${file}
+            ${true='--casava' false='' casava} \
+            ${true='--nano' false='' nano} \
+            ${true='--nofilter' false='' nofilter} \
+            ${true='--extract' false='--noextract' extract} \
+            ${true='--nogroup' false='' nogroup} \
+            ${'--min_length ' + min_length} \
+            ${'--format ' + format} \
+            ${'--contaminants ' + contaminants} \
+            ${'--adapters ' + adapters} \
+            ${'--limits ' + limits} \
+            ${'--kmers ' + kmers} \
+            ${true='--quiet' false='' quiet} \
+            ${file}
     }
 
     runtime {
