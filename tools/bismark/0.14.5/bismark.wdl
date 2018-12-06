@@ -1,8 +1,13 @@
+version 1.0
+
 task GenomePreparation {
-  Array[File] genomeFiles
-  Boolean bowtie1 = false
-  Boolean singleFasta = false
-  Boolean genomicComposition = false
+
+    input {
+      Array[File] genomeFiles
+      Boolean bowtie1 = false
+      Boolean singleFasta = false
+      Boolean genomicComposition = false
+    }
 
   command {
     mv ${sep=' ' genomeFiles} .
@@ -24,17 +29,20 @@ task GenomePreparation {
 }
 
 task BismarkPaired {
-  Array[File] genomeFiles
-  Array[File] indexFilesCT
-  Array[File] indexFilesGA
-  Pair[File, File] pairedFiles
-  Boolean fastq = true
 
-  # Alignment
-  Boolean bowtie1 = false
-  Int seedmms = 1
-  Boolean unmapped = false
+    input {
+      Array[File] genomeFiles
+      Array[File] indexFilesCT
+      Array[File] indexFilesGA
+      Pair[File, File] pairedFiles
+      Boolean fastq = true
+
+      # Alignment
+      Boolean bowtie1 = false
+      Int seedmms = 1
+      Boolean unmapped = false
   Boolean ambiguous = false
+    }
 
   command {
     mv ${sep=' ' genomeFiles} .
@@ -70,9 +78,12 @@ task BismarkPaired {
 }
 
 task Deduplicate {
-  File file
-  Boolean paired = true
-  Boolean bam = false
+
+    input {
+      File file
+      Boolean paired = true
+      Boolean bam = false
+    }
 
   command {
     mv ${file} .
@@ -92,9 +103,12 @@ task Deduplicate {
 }
 
 task MethylationExtractor {
-  File file
-  Boolean paired = false
-  Boolean bedGraph = false
+
+    input {
+      File file
+      Boolean paired = false
+      Boolean bedGraph = false
+    }
 
   command {
     bismark_methylation_extractor ${file} \

@@ -1,6 +1,11 @@
+version 1.0
+
 task Index {
-  File genomeFile
-  String? algorithm
+
+    input {
+      File genomeFile
+      String? algorithm
+    }
 
   command {
     ln -s ${genomeFile} -t .
@@ -18,14 +23,18 @@ task Index {
 }
 
 task AlignMem {
-  File genomeFile
-  Array[File] indexFiles
-  Pair[File, File] pairedFiles
-  String outputFileName
 
-  Boolean M = false
-  String? R
-  Int? t
+    input {
+      File genomeFile
+      Array[File] indexFiles
+      Pair[File, File] pairedFiles
+      String outputFileName
+
+      Boolean M = false
+      String? R
+      Int? t
+    }
+
 
   command {
     ln -s ${sep=' ' indexFiles} -t .

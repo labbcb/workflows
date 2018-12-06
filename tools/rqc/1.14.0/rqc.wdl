@@ -1,11 +1,16 @@
+version 1.0
+
 task Rqc {
-	Array[File] files
-	Array[String] groups
-	Boolean sample = true
-	Int reads = 1000000
-	Int workers = 1
-	String reportFile = "rqc_report"
-	String rdsFile = "rqc.rds"
+
+    input {
+        Array[File] files
+        Array[String] groups
+        Boolean sample = true
+        Int reads = 1000000
+        Int workers = 1
+        String reportFile = "rqc_report"
+        String rdsFile = "rqc.rds"
+    }
 
 	command {
 		rqc --files ${sep=',' files} \

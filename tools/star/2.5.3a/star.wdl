@@ -1,6 +1,11 @@
+version 1.0
+
 task GenomeGenerate {
-  Array[File] genomeFiles
-  File? gtfFile
+
+    input {
+      Array[File] genomeFiles
+      File? gtfFile
+    }
 
   command {
     STAR --runMode --genomeGenerate --genomeDir . \
@@ -18,8 +23,11 @@ task GenomeGenerate {
 }
 
 task AlignReads {
-  Array[File] indexFiles
-  Pair[File, File] pairedFiles
+
+    input {
+      Array[File] indexFiles
+      Pair[File, File] pairedFiles
+    }
 
   command {
     mv ${sep=' ' indexFiles} .

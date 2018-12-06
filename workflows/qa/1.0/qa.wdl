@@ -1,9 +1,14 @@
+version 1.0
+
 import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/rqc/1.14.0/rqc.wdl" as rqc
 import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/fastqc/0.11.7/fastqc.wdl" as fastqc
 
 workflow QA {
-    Array[File]+ files
-    Array[String]+ groups
+
+    input {
+        Array[File]+ files
+        Array[String]+ groups
+    }
 
     call rqc.Rqc {
     	input:

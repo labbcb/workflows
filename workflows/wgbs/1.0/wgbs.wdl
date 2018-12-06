@@ -1,30 +1,34 @@
+version 1.0
 import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/trimgalore/0.4.4/trimgalore.wdl" as trimgalore
 import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/bismark/0.14.5/bismark.wdl" as bismark
 
 workflow WGBS {
-  # Raw Sequencing Reads
-  Array[File] filesR1
-  Array[File] filesR2
 
-  # Reference Genome Files
-  Array[File] genomeFiles
+    input {
+      # Raw Sequencing Reads
+      Array[File] filesR1
+      Array[File] filesR2
 
-  # Read Trimming
-  Boolean trim1 = true
-  Boolean illumina = true
+      # Reference Genome Files
+      Array[File] genomeFiles
 
-  # Read Alignment
-  Int seedmms = 1
-  Boolean bowtie1 = true
-  Boolean unmapped = true
-  Boolean ambiguous = true
+      # Read Trimming
+      Boolean trim1 = true
+      Boolean illumina = true
 
-  # Deduplicate Aligned Sequences
-  Boolean paired = true
-  Boolean bam = true
+      # Read Alignment
+      Int seedmms = 1
+      Boolean bowtie1 = true
+      Boolean unmapped = true
+      Boolean ambiguous = true
 
-  # Methylation Quantification
-  Boolean bedGraph = true
+      # Deduplicate Aligned Sequences
+      Boolean paired = true
+      Boolean bam = true
+
+      # Methylation Quantification
+      Boolean bedGraph = true
+    }
 
   scatter (pairedFiles in zip(filesR1, filesR2)) {
  	  call trimgalore.TrimGalorePaired {

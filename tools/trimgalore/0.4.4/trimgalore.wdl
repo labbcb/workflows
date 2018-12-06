@@ -1,27 +1,32 @@
-task TrimGaloreSingle {
-	# General options
-	File file
-	Int quality = 20
-	Boolean phred33 = true
-	Boolean phred64 = false
-	String? adapter
-	Boolean illumina = false
-	Boolean nextera = false
-	Boolean smallRNA = false
-	Int? maxLength
-	Int stringency = 1
-	Float errorRate = 0.1
-	Boolean gzip = true
-	Int length = 20
-	Int? maxN
-	Boolean trimN = false
-	Int? clipR1
-	Int? threePrimeClipR1
+version 1.0
 
-	# RRBS-specific options (MspI digested material)
-	Boolean rrbs = false
-	Boolean nonDirectional = false
-	Boolean keep = false
+task TrimGaloreSingle {
+
+    input {
+        # General options
+        File file
+        Int quality = 20
+        Boolean phred33 = true
+        Boolean phred64 = false
+        String? adapter
+        Boolean illumina = false
+        Boolean nextera = false
+        Boolean smallRNA = false
+        Int? maxLength
+        Int stringency = 1
+        Float errorRate = 0.1
+        Boolean gzip = true
+        Int length = 20
+        Int? maxN
+        Boolean trimN = false
+        Int? clipR1
+        Int? threePrimeClipR1
+
+        # RRBS-specific options (MspI digested material)
+        Boolean rrbs = false
+        Boolean nonDirectional = false
+        Boolean keep = false
+    }
 
 	command {
 		trim_galore ${file} \
@@ -57,35 +62,38 @@ task TrimGaloreSingle {
 }
 
 task TrimGalorePaired {
-	# General options
-	Pair[File, File] pairedFiles
-	Int quality = 20
-	Boolean phred33 = true
-	Boolean phred64 = false
-	String? adapter
-	String? adapter2
-	Boolean illumina = false
-	Boolean nextera = false
-	Boolean smallRNA = false
-	Int? maxLength
-	Int stringency = 1
-	Float errorRate = 0.1
-	Boolean gzip = true
-	Int length = 20
-	Int? maxN
-	Boolean trimN = false
-	Int? clipR1
-	Int? clipR2
-	Int? threePrimeClipR1
-	Int? threePrimeClipR2
 
-	# RRBS-specific options (MspI digested material)
-	Boolean rrbs = false
-	Boolean nonDirectional = false
-	Boolean keep = false
+    input {
+        # General options
+        Pair[File, File] pairedFiles
+        Int quality = 20
+        Boolean phred33 = true
+        Boolean phred64 = false
+        String? adapter
+        String? adapter2
+        Boolean illumina = false
+        Boolean nextera = false
+        Boolean smallRNA = false
+        Int? maxLength
+        Int stringency = 1
+        Float errorRate = 0.1
+        Boolean gzip = true
+        Int length = 20
+        Int? maxN
+        Boolean trimN = false
+        Int? clipR1
+        Int? clipR2
+        Int? threePrimeClipR1
+        Int? threePrimeClipR2
 
-	# Paired-end specific options
-	Boolean trim1 = false
+        # RRBS-specific options (MspI digested material)
+        Boolean rrbs = false
+        Boolean nonDirectional = false
+        Boolean keep = false
+
+        # Paired-end specific options
+        Boolean trim1 = false
+    }
 
 	command {
 		trim_galore ${pairedFiles.left} ${pairedFiles.right} \

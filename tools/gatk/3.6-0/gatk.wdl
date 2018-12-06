@@ -1,15 +1,20 @@
+version 1.0
+
 task BaseRecalibrator {
-  File file
-  File indexFile
-  File genomeFile
-  File genomeIndexFile
-  File dictionaryFile
-  String outputFileName
-  File? intervalsFile
-  Int? intervalPadding
-  Array[File] knownSitesFiles
-  Array[File] knownSitesIndexFiles
-  File? BQSR
+
+    input {
+      File file
+      File indexFile
+      File genomeFile
+      File genomeIndexFile
+      File dictionaryFile
+      String outputFileName
+      File? intervalsFile
+      Int? intervalPadding
+      Array[File] knownSitesFiles
+      Array[File] knownSitesIndexFiles
+      File? BQSR
+    }
 
   command {
     ln -s ${file} ${indexFile} ${genomeFile} ${genomeIndexFile} ${dictionaryFile} -t .
@@ -33,14 +38,17 @@ task BaseRecalibrator {
 }
 
 task AnalyzeCovariates {
-  File beforeReportFile
-  File afterReportFile
-  File genomeFile
-  File genomeIndexFile
-  File dictionaryFile
-  String outputFileName
-  File? intervalsFile
-  Int? intervalPadding
+
+    input {
+      File beforeReportFile
+      File afterReportFile
+      File genomeFile
+      File genomeIndexFile
+      File dictionaryFile
+      String outputFileName
+      File? intervalsFile
+      Int? intervalPadding
+    }
 
   command {
     ln -s ${genomeFile} ${genomeIndexFile} ${dictionaryFile} -t .
@@ -63,15 +71,18 @@ task AnalyzeCovariates {
 }
 
 task PrintReads {
-  File file
-  File indexFile
-  File genomeFile
-  File genomeIndexFile
-  File dictionaryFile
-  String outputFileName
-  File? intervalsFile
-  Int? intervalPadding
-  File? BQSR
+
+    input {
+      File file
+      File indexFile
+      File genomeFile
+      File genomeIndexFile
+      File dictionaryFile
+      String outputFileName
+      File? intervalsFile
+      Int? intervalPadding
+      File? BQSR
+    }
 
   command {
     ln -s ${file} ${indexFile} ${genomeFile} ${genomeIndexFile} ${dictionaryFile} -t .
@@ -95,20 +106,23 @@ task PrintReads {
 }
 
 task HaplotypeCaller {
-  File file
-  File indexFile
-  File genomeFile
-  File genomeIndexFile
-  File dictionaryFile
-  String outputFileName
-  File? intervalsFile
-  Int? intervalPadding
-  String? genotypingMode
-  Int? standCallConf
-  Int? standEmitConf
-  String? emitRefConfidence
-  String? variantIndexType
-  Int? variantIndexParameter
+
+    input {
+      File file
+      File indexFile
+      File genomeFile
+      File genomeIndexFile
+      File dictionaryFile
+      String outputFileName
+      File? intervalsFile
+      Int? intervalPadding
+      String? genotypingMode
+      Int? standCallConf
+      Int? standEmitConf
+      String? emitRefConfidence
+      String? variantIndexType
+      Int? variantIndexParameter
+    }
 
   command {
     ln -s ${file} ${indexFile} ${genomeFile} ${genomeIndexFile} ${dictionaryFile} -t .

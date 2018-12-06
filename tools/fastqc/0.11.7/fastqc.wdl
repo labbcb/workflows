@@ -1,18 +1,23 @@
+version 1.0
+
 task FastQC {
-    File file
-    Boolean? casava
-    Boolean? nano
-    Boolean? nofilter
-    Boolean? extract = false
-    Boolean? nogroup
-    Int? min_length
-    String? format
-    Int? threads
-    File? contaminants
-    File? adapters
-    File? limits
-    Int? kmers = 7
-    Boolean? quiet
+
+    input {
+        File file
+        Boolean? casava
+        Boolean? nano
+        Boolean? nofilter
+        Boolean? extract = false
+        Boolean? nogroup
+        Int? min_length
+        String? format
+        Int? threads
+        File? contaminants
+        File? adapters
+        File? limits
+        Int? kmers = 7
+        Boolean? quiet
+    }
 
     command {
         fastqc --outdir "." \

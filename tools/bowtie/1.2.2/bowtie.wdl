@@ -1,6 +1,11 @@
+version 1.0
+
 task BuildIndex {
-  Array[File] genomeFiles
-  String ebwtBase
+
+    input {
+      Array[File] genomeFiles
+      String ebwtBase
+    }
   
   command {
     bowtie-build ${sep=',' genomeFiles} ${ebwtBase}
@@ -26,16 +31,19 @@ task BuildIndex {
 }
 
 task Align {
-  Array[File] indexFiles
-  String ebwtBase
-  File file
-  String outputFileName
-  Int seedmms = 2
-  Boolean all = false
-  Boolean best = false
-  Boolean strata = false
-  Boolean sam = false
-  Int threads = 1
+
+    input {
+      Array[File] indexFiles
+      String ebwtBase
+      File file
+      String outputFileName
+      Int seedmms = 2
+      Boolean all = false
+      Boolean best = false
+      Boolean strata = false
+      Boolean sam = false
+      Int threads = 1
+    }
 
   command {
     ln -s ${sep=' ' indexFiles} -t .

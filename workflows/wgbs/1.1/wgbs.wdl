@@ -1,29 +1,33 @@
+version 1.0
 import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/trimgalore/0.4.5/trimgalore.wdl" as trimgalore
 import "https://raw.githubusercontent.com/labbcb/workflows/master/tools/bismark/0.19.0/bismark.wdl" as bismark
 
 workflow WGBS {
-  # Raw Sequencing Reads
-  Array[File] filesR1
-  Array[File] filesR2
 
-  # Reference Genome Files
-  Array[File] genomeFiles
+    input {
+      # Raw Sequencing Reads
+      Array[File] filesR1
+      Array[File] filesR2
 
-  # Read Trimming
-  Boolean illumina = true
-  Int clipR1 = 8
-  Int clipR2 = 8
+      # Reference Genome Files
+      Array[File] genomeFiles
 
-  # Read Alignment
-  Boolean unmapped = true
-  Boolean ambiguous = true
+      # Read Trimming
+      Boolean illumina = true
+      Int clipR1 = 8
+      Int clipR2 = 8
 
-  # Deduplicate Aligned Sequences
-  Boolean paired = true
-  Boolean bam = true
+      # Read Alignment
+      Boolean unmapped = true
+      Boolean ambiguous = true
 
-  # Methylation Quantification
-  Boolean bedGraph = true
+      # Deduplicate Aligned Sequences
+      Boolean paired = true
+      Boolean bam = true
+
+      # Methylation Quantification
+      Boolean bedGraph = true
+    }
 
   call bismark.GenomePreparation {
     input:

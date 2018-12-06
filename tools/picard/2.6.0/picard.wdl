@@ -1,5 +1,10 @@
+version 1.0
+
 task BuildBamIndex {
-  File file
+
+    input {
+      File file
+    }
 
   command {
     ln -s ${file} -t .
@@ -16,16 +21,19 @@ task BuildBamIndex {
 }
 
 task CollectHsMetrics {
-  File file
-  File indexFile
-  String outputFileName
-  File targetIntervalsFile
-  File baitIntervalsFile
-  String verbosity = "INFO"
 
-  File genomeFile
-  File genomeIndexFile
-  String? perTargetCoverage
+    input {
+      File file
+      File indexFile
+      String outputFileName
+      File targetIntervalsFile
+      File baitIntervalsFile
+      String verbosity = "INFO"
+
+      File genomeFile
+      File genomeIndexFile
+      String? perTargetCoverage
+    }
 
   command {
     ln -s ${file} ${indexFile} ${genomeFile} ${genomeIndexFile} -t .
@@ -50,14 +58,17 @@ task CollectHsMetrics {
 }
 
 task CreateSequenceDictionary {
-  File genomeFile
-  String outputFileName
 
-  String? genomeAssembly
-  String? uri
-  String? species
-  Boolean? truncateNamesAtWhitespace
-  Int? numSequences
+    input {
+      File genomeFile
+      String outputFileName
+
+      String? genomeAssembly
+      String? uri
+      String? species
+      Boolean? truncateNamesAtWhitespace
+      Int? numSequences
+    }
 
   command {
     java -jar /usr/picard.jar CreateSequenceDictionary \
@@ -80,10 +91,13 @@ task CreateSequenceDictionary {
 }
 
 task MarkDuplicates {
-  File file
-  String outputFileName
-  String? metricsFileName
-  Boolean removeDuplicates = false
+
+    input {
+      File file
+      String outputFileName
+      String? metricsFileName
+      Boolean removeDuplicates = false
+    }
 
   command {
     java -jar /usr/picard.jar MarkDuplicates INPUT=${file} \
@@ -103,9 +117,12 @@ task MarkDuplicates {
 }
 
 task SortSam {
-  File file
-  String outputFileName
-  String? sortOrder
+
+    input {
+      File file
+      String outputFileName
+      String? sortOrder
+    }
 
   command {
     java -jar /usr/picard.jar SortSam INPUT=${file} \
@@ -123,11 +140,14 @@ task SortSam {
 }
 
 task ValidateSamFile {
-  File file
-  File indexFile
-  String outputFileName
-  String? mode
-  Boolean validateIndex = true
+
+    input {
+      File file
+      File indexFile
+      String outputFileName
+      String? mode
+      Boolean validateIndex = true
+    }
 
   command {
     ln -s ${file} ${indexFile} -t .
@@ -148,27 +168,30 @@ task ValidateSamFile {
 }
 
 task FastqToSam {
-  File fileR1
-  File? fileR2
-  Boolean useSequentialFastqs = false
-  String? qualityFormat
-  String outputFileName
-  String? readGroupName
-  String sampleName
-  String? libraryName
-  String? platformUnit
-  String? platform
-  String? sequencingCenter
-  Int? predictedInsertSize
-  String? programGroup
-  String? platformModel
-  String? comment
-  String? description
-  String? runDate
-  String sortOrder = "queryname"
-  Int minQ = 0
-  Int maxQ = 93
-  Boolean allowAndIgnoreEmptyLines = false
+
+    input {
+      File fileR1
+      File? fileR2
+      Boolean useSequentialFastqs = false
+      String? qualityFormat
+      String outputFileName
+      String? readGroupName
+      String sampleName
+      String? libraryName
+      String? platformUnit
+      String? platform
+      String? sequencingCenter
+      Int? predictedInsertSize
+      String? programGroup
+      String? platformModel
+      String? comment
+      String? description
+      String? runDate
+      String sortOrder = "queryname"
+      Int minQ = 0
+      Int maxQ = 93
+      Boolean allowAndIgnoreEmptyLines = false
+    }
 
   command {
     java -jar /usr/picard.jar FastqToSam \

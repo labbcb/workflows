@@ -1,5 +1,10 @@
+version 1.0
+
 task Faidx {
-  File genomeFile
+
+    input {
+      File genomeFile
+    }
 
   command {
     ln -s ${genomeFile} -t .

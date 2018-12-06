@@ -1,8 +1,13 @@
+version 1.0
+
 task Count {
-  File file
-  File gtfFile
-  String format = "sam"
-  String stranded = "yes"
+
+    input {
+      File file
+      File gtfFile
+      String format = "sam"
+      String stranded = "yes"
+    }
 
   command {
     htseq-count --format ${format} --stranded ${stranded} \

@@ -1,17 +1,22 @@
+version 1.0
+
 task FeatureCounts {
-  File annotationFile
-  Array[File] files
-  String outputFileName
-  
-  String format = "GTF"
-  String featureType = "exon"
-  String attributeType = "gene_id"
-  Boolean featureLevel = false
-  Boolean overlaps = false
-  Boolean multiMapping = false
-  Int mappingQuality = 0
-  Int threads = 1
-  
+
+    input {
+      File annotationFile
+      Array[File] files
+      String outputFileName
+
+      String format = "GTF"
+      String featureType = "exon"
+      String attributeType = "gene_id"
+      Boolean featureLevel = false
+      Boolean overlaps = false
+      Boolean multiMapping = false
+      Int mappingQuality = 0
+      Int threads = 1
+    }
+
   command {
     featureCounts \
       -F ${format} \
