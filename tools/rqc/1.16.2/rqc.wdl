@@ -10,7 +10,7 @@ task Rqc {
         Int workers = 1
         String reportFile = "rqc_report"
         String rdsFile = "rqc.rds"
-        Array[Int] pair
+        Array[Int]? pair
     }
 
 	command {
