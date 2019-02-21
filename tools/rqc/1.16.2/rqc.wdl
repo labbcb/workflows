@@ -13,12 +13,14 @@ task Rqc {
         Array[Int]? pair
     }
 
+    String pairPrefix = if defined(pair) then "--pair" else ""
+
 	command {
 		Rqc --files ${sep=',' files} \
 			--groups ${sep=',' groups} \
 			${true='--sample' false='' sample} \
 			--reads ${reads} \
-			--pair ${sep=',' pair} \
+			${pairPrefix} ${sep=',' pair} \
 			--workers ${workers} \
 			--report_file ${reportFile} \
 			--rds_file ${rdsFile}
