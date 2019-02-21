@@ -8,7 +8,7 @@ task GenomeGenerate {
     }
 
     command {
-        STAR --runMode --genomeGenerate --genomeDir . \
+        STAR --runMode genomeGenerate --genomeDir . \
             --genomeFastaFiles ${sep=' ' genomeFiles} \
             ${'--sjdbGTFfile ' + gtfFile}
     }
