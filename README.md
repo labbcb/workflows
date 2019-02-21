@@ -69,3 +69,11 @@ bash generate_inputs.sh
 
 - February 20, 2019
   - Fixed Dockerfile for Cutadapt versions 1.13, 1.16
+  - Added Dockerfile for R version version 3.5.2
+  - Added Dockerfile for Bioconductor version 3.8
+  - Added Dockerfile and WDL for FastQC version 1.11.8
+  - Added Dockerfile and WDL for Rqc version 1.16.2
+    - Added parameter pair for paired-end files
+  - Updated QA workflow to version 1.1
+    - Using FastQC version 1.11.8
+    - Using Rqc version 1.16.8
