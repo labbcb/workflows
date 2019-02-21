@@ -14,7 +14,7 @@ task Rqc {
     }
 
 	command {
-		rqc --files ${sep=',' files} \
+		Rqc --files ${sep=',' files} \
 			--groups ${sep=',' groups} \
 			${true='--sample' false='' sample} \
 			--reads ${reads} \
