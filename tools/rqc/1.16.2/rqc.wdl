@@ -18,7 +18,7 @@ task Rqc {
 			--groups ${sep=',' groups} \
 			${true='--sample' false='' sample} \
 			--reads ${reads} \
-			--pair ${sep=',' + pair} \
+			--pair ${sep=',' pair} \
 			--workers ${workers} \
 			--report_file ${reportFile} \
 			--rds_file ${rdsFile}
