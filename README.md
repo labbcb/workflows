@@ -77,3 +77,6 @@ bash generate_inputs.sh
   - Updated QA workflow to version 1.1
     - Using FastQC version 1.11.8
     - Using Rqc version 1.16.8
+  - Added CountMultipleFiles task for HTSeq-count
+  - Added WDL for RNAseq workflow version 1.1
+    - This version outputs a single counts file (instead of one file per sample)
