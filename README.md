@@ -24,7 +24,7 @@ CWL/WDL must use the right version of Docker image according to tool version.
 | Bowtie        | 1.2.0, 1.2.2 | An ultrafast, memory-efficient short read aligner |
 | BWA           | 0.7.15, | Burrows-Wheeler Aligner |
 | Cutadapt      | 1.13, 1.16 | Removes adapter sequences from sequencing reads |
-| FastQC        | 0.11.6 0.11.7 | A quality control tool for high throughput sequence data |
+| FastQC        | 0.11.6, 0.11.7, 0.11.8 | A quality control tool for high throughput sequence data |
 | GATK          | 3.6-0 | Genome Analysis Toolkit - Variant Discovery in High-Throughput Sequencing Data |
 | HTSeq count   | 0.9.1 | Counting reads in features |
 | Reaper        | 13-274 | Program for demultiplexing, trimming and filtering short read sequencing data |
@@ -44,7 +44,7 @@ Workflows import tool descriptions allowing reuse of these files.
 | Workflow  | Versions | Description |
 | --------- | -------- | ------------|
 | miRNA-seq | 1.0, 1.1 | Quantification of known microRNAs from NGS data |
-| QA        | 1.0      | Quality assessment of NGS data |
+| QA        | 1.0, 1.1 | Quality assessment of NGS data |
 | RNA-seq   | 1.0      | Quantification of known genes from NGS data |
 | WGBS      | 1.0, 1.1 | Quantification of CpG methylation from NGS data |
 
@@ -64,3 +64,8 @@ Generating input files make WOMTOOL to validate WDL workflow and tools files.
 ```bash
 bash generate_inputs.sh
 ```
+
+## Changelog
+
+- February 20, 2019
+  - Fixed Dockerfile for Cutadapt versions 1.13, 1.16
