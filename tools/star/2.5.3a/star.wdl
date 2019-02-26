@@ -29,9 +29,10 @@ task AlignReads {
         Pair[File, File] pairedFiles
     }
 
+    String genomeDir = sub(indexFiles[0], basename(indexFiles[0]), "")
+
     command {
-        ln -s ${sep=' ' indexFiles} -t .
-        STAR --runMode alignReads --genomeDir . \
+        STAR --runMode alignReads --genomeDir ${genomeDir} \
             --readFilesIn ${pairedFiles.left} ${pairedFiles.right} \
             --outSAMtype BAM SortedByCoordinate
     }
