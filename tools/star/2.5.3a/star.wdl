@@ -14,7 +14,7 @@ task GenomeGenerate {
     }
 
     output {
-        Array[File] indexFiles = glob("*")
+        Array[File] indexFiles = ["Genome", "Log.out", "SA", "SAindex", "chrLength.txt", "chrName.txt", "chrNameLength.txt", "chrStart.txt", "genomeParameters.txt"]
     }
 
     runtime {
