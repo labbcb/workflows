@@ -29,7 +29,7 @@ task AlignReads {
         Pair[File, File] pairedFiles
     }
 
-    String genomeDir = sub(indexFiles[0], basename(indexFiles[0]), "")
+    String genomeDir = sub(indexFiles[0], "/[^/]+$", "")
 
     command {
         STAR --runMode alignReads --genomeDir ${genomeDir} \
