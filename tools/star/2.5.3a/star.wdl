@@ -30,7 +30,7 @@ task AlignReads {
     }
 
     command {
-        mv ${sep=' ' indexFiles} .
+        ln -s ${sep=' ' indexFiles} -t .
         STAR --runMode alignReads --genomeDir . \
             --readFilesIn ${pairedFiles.left} ${pairedFiles.right} \
             --outSAMtype BAM SortedByCoordinate
