@@ -67,6 +67,9 @@ bash generate_inputs.sh
 
 ## Changelog
 
+- May 28, 2019
+  - Small RNA-seq workflow version 1.2.0
+    - Removed index genome task
 - February 20, 2019
   - Fixed Dockerfile for Cutadapt versions 1.13, 1.16
   - Added Dockerfile for R version version 3.5.2
