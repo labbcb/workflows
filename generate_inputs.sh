@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-WOMTOOL_VERSION="36"
+WOMTOOL_VERSION="41"
 
 if [ ! -f womtool.jar ]
 then
-  echo "Download WOMTOOL version ${WOMTOOL_VERSION}"
+  echo "Downloading WOMTOOL version ${WOMTOOL_VERSION}"
   curl -fsSL "https://github.com/broadinstitute/cromwell/releases/download/${WOMTOOL_VERSION}/womtool-${WOMTOOL_VERSION}.jar" -o womtool.jar
   if [ $? -ne 0 ]; then
     exit 1

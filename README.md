@@ -67,6 +67,9 @@ bash generate_inputs.sh
 
 ## Changelog
 
+- May 29, 2019
+  - RNA-seq workflow version 1.2.0
+    - Removed index genome task
 - May 28, 2019
   - Small RNA-seq workflow version 1.2.0
     - Removed index genome task
