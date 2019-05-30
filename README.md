@@ -67,6 +67,9 @@ bash generate_inputs.sh
 
 ## Changelog
 
+- May 30, 2019
+  - WGBS workflow version 1.2.0
+    - Removed index genome task
 - May 29, 2019
   - RNA-seq workflow version 1.2.0
     - Removed index genome task
