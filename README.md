@@ -67,30 +67,33 @@ bash generate_inputs.sh
 
 ## Changelog
 
+- June 5, 2019
+    - RNA-seq workflow version 1.3.1
+        - Downgrade HTSeq to 0.9.1
 - June 4, 2019
-  - Added Docker and WDL for HTSeq version 0.11.1
-  - RNA-seq workflow version 1.3.0
-    - Updated HTSeq to 0.11.1
-    - Sample names required as input to generate count files
+    - Added Docker and WDL for HTSeq version 0.11.1
+    - RNA-seq workflow version 1.3.0
+        - Updated HTSeq to 0.11.1
+        - Sample names required as input to generate count files
 - May 30, 2019
-  - WGBS workflow version 1.2.0
-    - Removed index genome task
+    - WGBS workflow version 1.2.0
+        - Removed index genome task
 - May 29, 2019
-  - RNA-seq workflow version 1.2.0
-    - Removed index genome task
+    - RNA-seq workflow version 1.2.0
+        - Removed index genome task
 - May 28, 2019
-  - Small RNA-seq workflow version 1.2.0
-    - Removed index genome task
+    - Small RNA-seq workflow version 1.2.0
+        - Removed index genome task
 - February 20, 2019
-  - Fixed Dockerfile for Cutadapt versions 1.13, 1.16
-  - Added Dockerfile for R version version 3.5.2
-  - Added Dockerfile for Bioconductor version 3.8
-  - Added Dockerfile and WDL for FastQC version 1.11.8
-  - Added Dockerfile and WDL for Rqc version 1.16.2
-    - Added parameter pair for paired-end files
-  - Updated QA workflow to version 1.1
-    - Using FastQC version 1.11.8
-    - Using Rqc version 1.16.8
-  - Added CountMultipleFiles task for HTSeq-count
-  - Added WDL for RNAseq workflow version 1.1
-    - This version outputs a single counts file (instead of one file per sample)
+    - Fixed Dockerfile for Cutadapt versions 1.13, 1.16
+    - Added Dockerfile for R version version 3.5.2
+    - Added Dockerfile for Bioconductor version 3.8
+    - Added Dockerfile and WDL for FastQC version 1.11.8
+    - Added Dockerfile and WDL for Rqc version 1.16.2
+        - Added parameter pair for paired-end files
+    - Updated QA workflow to version 1.1
+        - Using FastQC version 1.11.8
+        - Using Rqc version 1.16.8
+    - Added CountMultipleFiles task for HTSeq-count
+    - Added WDL for RNAseq workflow version 1.1
+        - This version outputs a single counts file (instead of one file per sample)

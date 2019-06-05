@@ -7,15 +7,16 @@ task Count {
         File gtfFile
         String format = "sam"
         String stranded = "yes"
+        String destination = "stdout"
     }
 
     command {
-        htseq-count --format ${format} --stranded ${stranded} \
-            ${file} ${gtfFile}
+        htseq-count --format ~{format} --stranded ~{stranded} \
+            ~{file} ~{gtfFile} > ~{destination}
     }
 
     output {
-        File countFile = stdout()
+        File countFile = destination
     }
 
     runtime {
@@ -30,15 +31,16 @@ task CountMultipleFiles {
         File gtfFile
         String format = "sam"
         String stranded = "yes"
+        String destination = "stdout"
     }
 
     command {
-        htseq-count --format ${format} --stranded ${stranded} \
-            ${sep=' ' files} ${gtfFile}
+        htseq-count --format ~{format} --stranded ~{stranded} \
+            ~{sep=' ' files} > ~{destination}
     }
 
     output {
-        File countFile = stdout()
+        File countFile = destination
     }
 
     runtime {

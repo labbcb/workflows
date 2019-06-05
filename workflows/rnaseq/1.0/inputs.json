@@ -6,6 +6,7 @@
   "RNAseq.gtfFile": "File",
   "RNAseq.format": "String (optional, default = \"bam\")",
   "RNAseq.TrimGalorePaired.adapter2": "String? (optional)",
+  "RNAseq.Count.destination": "String (optional, default = \"stdout\")",
   "RNAseq.gzip": "Boolean (optional, default = false)",
   "RNAseq.TrimGalorePaired.clipR1": "Int? (optional)",
   "RNAseq.stranded": "String (optional, default = \"reverse\")",

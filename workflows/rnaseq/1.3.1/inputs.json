@@ -15,7 +15,7 @@
   "RNAseq.filesR1": "Array[File]",
   "RNAseq.TrimGalorePaired.maxLength": "Int? (optional)",
   "RNAseq.TrimGalorePaired.phred64": "Boolean (optional, default = false)",
-  "RNAseq.genomeFiles": "Array[File]",
+  "RNAseq.sampleNames": "Array[String]",
   "RNAseq.TrimGalorePaired.errorRate": "Float (optional, default = 0.1)",
   "RNAseq.illumina": "Boolean (optional, default = true)",
   "RNAseq.TrimGalorePaired.nextera": "Boolean (optional, default = false)",
@@ -26,10 +26,9 @@
   "RNAseq.TrimGalorePaired.keep": "Boolean (optional, default = false)",
   "RNAseq.TrimGalorePaired.threePrimeClipR2": "Int? (optional)",
   "RNAseq.TrimGalorePaired.maxN": "Int? (optional)",
-  "RNAseq.CountMultipleFiles.destination": "String (optional, default = \"stdout\")",
+  "RNAseq.indexFiles": "Array[File]",
   "RNAseq.TrimGalorePaired.nonDirectional": "Boolean (optional, default = false)",
   "RNAseq.TrimGalorePaired.smallRNA": "Boolean (optional, default = false)",
-  "RNAseq.TrimGalorePaired.clipR2": "Int? (optional)",
-  "RNAseq.GenomeGenerate.gtfFile": "File? (optional)"
+  "RNAseq.TrimGalorePaired.clipR2": "Int? (optional)"
 }
 
