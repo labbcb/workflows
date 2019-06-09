@@ -67,9 +67,6 @@ bash generate_inputs.sh
 
 ## Changelog
 
-- June 5, 2019
-    - RNA-seq workflow version 1.3.1
-        - Downgrade HTSeq to 0.9.1
 - June 4, 2019
     - Added Docker and WDL for HTSeq version 0.11.1
     - RNA-seq workflow version 1.3.0
