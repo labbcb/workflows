@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:9.9
 
 LABEL maintainer="well309@gmail.com"
 
