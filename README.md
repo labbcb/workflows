@@ -32,10 +32,11 @@ CWL/WDL must use the right version of Docker image according to tool version.
 | HTSeq-count   | 0.9.1, 0.11.1              | Counting reads in features                                                                                        |
 | Reaper        | 13-274                     | Program for demultiplexing, trimming and filtering short read sequencing data                                     |
 | Picard        | 2.6.0                      | A set of command line tools for manipulating high-throughput sequencing data                                      |
-| Plink         | 1.07                       | Whole genome association analysis toolset                                                                         |
+| Plink         | 1.07, 1.09                 | Whole genome association analysis toolset                                                                         |
 | R             | 3.4.2, 3.5.0/2, 3.6.1      | Language and environment for statistical computing and graphics                                                   |
 | Rqc           | 1.14.0, 1.16.2             | Quality Control Tool for High-Throughput Sequencing Data                                                          |
 | Samtools      | 1.5, 1.9                   | Reading/writing/editing/indexing/viewing SAM/BAM/CRAM format                                                      |
+| Shapeit2      | 900                        | Fast and accurate method for estimation of haplotypes (aka phasing) from genotype or sequencing data              |
 | STAR          | 2.5.3a, 2.7.1a             | RNA-seq aligner                                                                                                   |
 | featureCounts | 1.5.2, 1.6.2, 1.6.4        | Counting reads to genomic features such as genes, exons, promoters and genomic bins                               |
 | TrimGalore!   | 0.4.4, 0.4.5, 0.5.0, 0.6.3 | A wrapper tool around Cutadapt and FastQC to consistently apply quality and adapter trimming to FastQ files       |
