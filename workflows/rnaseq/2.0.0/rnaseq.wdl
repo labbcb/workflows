@@ -79,8 +79,8 @@ task Trim {
 	}
 
 	output {
-		File trim_1 = basename(fastq_1, ".fastq.gz") + "_val_1.fq.gz")
-		File trim_2	= basename(fastq_2, ".fastq.gz"), "_val_2.fq")
+		File trim_1 = basename(fastq_1, ".fastq.gz") + "_val_1.fq.gz"
+		File trim_2	= basename(fastq_2, ".fastq.gz") + "_val_2.fq"
 		File stats_1 = basename(fastq_1) + "_trimming_report.txt"
         File stats_2 = basename(fastq_2) + "_trimming_report.txt"
 	}
