@@ -44,7 +44,7 @@ workflow WGBS {
     }
 
     scatter (pairedFiles in TrimGalorePaired.trimFiles) {
-        call bismark.BismarkPaired {
+        call BismarkPaired {
             input:
                 genomeFiles = genomeFiles,
                 indexFilesCT = GenomePreparation.indexFilesCT,

@@ -23,13 +23,13 @@ workflow RNAseq {
         String stranded = "reverse"
     }
 
-    scatter (idx in range(length(files_1))) {
+    scatter (idx in range(length(fastq_1))) {
 
-        String sample_name = basename(files_1[idx], suffix_1) + ".txt"
+        String sample_name = basename(fastq_1[idx], suffix_1) + ".txt"
 
         call Trim {
             input:
-                fasfq_1 = fastq_1[idx],
+                fastq_1 = fastq_1[idx],
                 fastq_2 = fastq_2[idx]
         }
 
@@ -53,7 +53,6 @@ workflow RNAseq {
             input:
                 file = Align.align,
                 gtf = gtf,
-                format = format,
                 stranded = stranded,
                 destination = sample_name
         }

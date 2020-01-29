@@ -1,0 +1,19 @@
+{
+  "RNAseq.Trim.gzip": "Boolean (optional, default = true)",
+  "RNAseq.fastq_1": "Array[File]",
+  "RNAseq.suffix_1": "String (optional, default = \"_R1.fastq.gz\")",
+  "RNAseq.stranded": "String (optional, default = \"reverse\")",
+  "RNAseq.chrNameLength": "File",
+  "RNAseq.SA": "File",
+  "RNAseq.gtf": "File",
+  "RNAseq.SAindex": "File",
+  "RNAseq.chrStart": "File",
+  "RNAseq.genomeParameters": "File",
+  "RNAseq.chrLength": "File",
+  "RNAseq.fastq_2": "Array[File]",
+  "RNAseq.Genome": "File",
+  "RNAseq.chrName": "File",
+  "RNAseq.Trim.illumina": "Boolean (optional, default = true)",
+  "RNAseq.Count.format": "String"
+}
+

@@ -1,13 +1,13 @@
-15:48:24.759 [main] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
-15:48:24.765 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
-15:48:24.765 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
-15:48:24.781 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: MacOS
-15:48:24.783 [main] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
-15:48:24.783 [main] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 12
-15:48:24.785 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
-15:48:24.785 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
-15:48:24.786 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
-15:48:24.788 [main] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable
+16:23:12.947 [main] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+16:23:12.952 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+16:23:12.952 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
+16:23:12.970 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: MacOS
+16:23:12.971 [main] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+16:23:12.971 [main] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 12
+16:23:12.973 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+16:23:12.974 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+16:23:12.974 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+16:23:12.977 [main] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable
 java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)
 	at io.netty.util.internal.PlatformDependent0$4.run(PlatformDependent0.java:224)
@@ -99,8 +99,8 @@ java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
 	at scala.App.main$(App.scala:78)
 	at womtool.WomtoolMain$.main(WomtoolMain.scala:25)
 	at womtool.WomtoolMain.main(WomtoolMain.scala)
-15:48:24.790 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
-15:48:24.792 [main] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+16:23:12.979 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+16:23:12.980 [main] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
 java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$6 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @4d157787
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:376)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:639)
@@ -194,57 +194,57 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 	at scala.App.main$(App.scala:78)
 	at womtool.WomtoolMain$.main(WomtoolMain.scala:25)
 	at womtool.WomtoolMain.main(WomtoolMain.scala)
-15:48:24.792 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable
-15:48:24.792 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
-15:48:24.810 [main] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 2147483648 bytes (maybe)
-15:48:24.811 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/cb/rw3v2rc15w77l27mq4lsn09h0000gn/T (java.io.tmpdir)
-15:48:24.811 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
-15:48:24.812 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes
-15:48:24.812 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
-15:48:24.812 [main] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available
-15:48:24.812 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
-15:48:24.813 [main] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@36dce7ed
-15:48:24.819 [main] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available
-15:48:25.313 [main] DEBUG io.netty.handler.ssl.JdkSslContext - Default protocols (JDK): [TLSv1.2, TLSv1.1, TLSv1] 
-15:48:25.313 [main] DEBUG io.netty.handler.ssl.JdkSslContext - Default cipher suites (JDK): [TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
-15:48:25.345 [main] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
-15:48:25.361 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
-15:48:25.362 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
-15:48:25.381 [main] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
-15:48:25.381 [main] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
-15:48:25.405 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 8
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 8
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.tinyCacheSize: 512
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: true
-15:48:25.406 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
-15:48:25.415 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled
-15:48:25.415 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0
-15:48:25.416 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384
-15:48:25.940 [main] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 24863 (auto-detected)
-15:48:25.942 [main] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false
-15:48:25.942 [main] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false
-15:48:25.947 [main] DEBUG io.netty.util.NetUtil - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1%lo0] ([lo0, lo0, 0:0:0:0:0:0:0:1%lo0], {})
-15:48:25.947 [main] DEBUG io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
-15:48:25.950 [main] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: d0:81:7a:ff:fe:bc:a2:3e (auto-detected)
-15:48:26.006 [AsyncHttpClient-3-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true
-15:48:26.007 [AsyncHttpClient-3-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true
-15:48:26.007 [AsyncHttpClient-3-1] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@3eb7c912
-15:48:26.097 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096
-15:48:26.097 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2
-15:48:26.097 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16
-15:48:26.097 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8
-15:48:26.324 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.NettyConnectListener - Using new Channel '[id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443]' for 'GET' to '/labbcb/workflows/master/tools/trimgalore/0.5.0/trimgalore.wdl'
-15:48:26.344 [AsyncHttpClient-3-1] DEBUG io.netty.handler.ssl.SslHandler - [id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443] HANDSHAKEN: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-15:48:26.606 [AsyncHttpClient-3-1] DEBUG io.netty.handler.codec.compression.ZlibCodecFactory - -Dio.netty.noJdkZlibDecoder: false
-15:48:26.607 [AsyncHttpClient-3-1] DEBUG io.netty.handler.codec.compression.ZlibCodecFactory - -Dio.netty.noJdkZlibEncoder: false
-15:48:26.620 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.handler.HttpHandler - 
+16:23:12.981 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable
+16:23:12.981 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+16:23:13.004 [main] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 2147483648 bytes (maybe)
+16:23:13.004 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/cb/rw3v2rc15w77l27mq4lsn09h0000gn/T (java.io.tmpdir)
+16:23:13.004 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16:23:13.005 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes
+16:23:13.005 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+16:23:13.005 [main] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available
+16:23:13.006 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+16:23:13.006 [main] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@36dce7ed
+16:23:13.013 [main] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available
+16:23:13.260 [main] DEBUG io.netty.handler.ssl.JdkSslContext - Default protocols (JDK): [TLSv1.2, TLSv1.1, TLSv1] 
+16:23:13.260 [main] DEBUG io.netty.handler.ssl.JdkSslContext - Default cipher suites (JDK): [TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
+16:23:13.278 [main] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+16:23:13.285 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+16:23:13.285 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+16:23:13.312 [main] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+16:23:13.312 [main] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+16:23:13.322 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 8
+16:23:13.322 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 8
+16:23:13.322 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
+16:23:13.322 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11
+16:23:13.323 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216
+16:23:13.323 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.tinyCacheSize: 512
+16:23:13.323 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
+16:23:13.323 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
+16:23:13.323 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+16:23:13.323 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
+16:23:13.323 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: true
+16:23:13.323 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+16:23:13.331 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled
+16:23:13.331 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0
+16:23:13.331 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+16:23:13.570 [main] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 25618 (auto-detected)
+16:23:13.572 [main] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false
+16:23:13.572 [main] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false
+16:23:13.576 [main] DEBUG io.netty.util.NetUtil - Loopback interface: [lo0, lo0, 0:0:0:0:0:0:0:1%lo0] ([lo0, lo0, 0:0:0:0:0:0:0:1%lo0], {})
+16:23:13.577 [main] DEBUG io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+16:23:13.579 [main] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: d0:81:7a:ff:fe:bc:a2:3e (auto-detected)
+16:23:13.626 [AsyncHttpClient-3-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true
+16:23:13.627 [AsyncHttpClient-3-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true
+16:23:13.627 [AsyncHttpClient-3-1] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@6e0453a1
+16:23:13.708 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096
+16:23:13.708 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+16:23:13.708 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16
+16:23:13.708 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8
+16:23:13.944 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.NettyConnectListener - Using new Channel '[id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443]' for 'GET' to '/labbcb/workflows/master/tools/trimgalore/0.5.0/trimgalore.wdl'
+16:23:13.964 [AsyncHttpClient-3-1] DEBUG io.netty.handler.ssl.SslHandler - [id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443] HANDSHAKEN: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+16:23:13.999 [AsyncHttpClient-3-1] DEBUG io.netty.handler.codec.compression.ZlibCodecFactory - -Dio.netty.noJdkZlibDecoder: false
+16:23:13.999 [AsyncHttpClient-3-1] DEBUG io.netty.handler.codec.compression.ZlibCodecFactory - -Dio.netty.noJdkZlibEncoder: false
+16:23:14.004 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.handler.HttpHandler - 
 
 Request DefaultFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: EmptyByteBufBE)
 GET /labbcb/workflows/master/tools/trimgalore/0.5.0/trimgalore.wdl HTTP/1.1
@@ -265,27 +265,27 @@ ETag: W/"8c56b6fbcad72df257ad4eeab6277c4ae65a5adc2c70a170e941cdf964e0be05"
 Cache-Control: max-age=300
 X-Geo-Block-List: 
 Via: 1.1 varnish-v4
-X-GitHub-Request-Id: 571C:27D0:EF7F9:102FAF:5E31C423
+X-GitHub-Request-Id: BCBC:051E:A28AD:B1300:5E31CCB0
 Accept-Ranges: bytes
-Date: Wed, 29 Jan 2020 17:48:26 GMT
+Date: Wed, 29 Jan 2020 18:23:13 GMT
 Via: 1.1 varnish
 Connection: keep-alive
-X-Served-By: cache-gru17138-GRU
+X-Served-By: cache-gru17133-GRU
 X-Cache: HIT
 X-Cache-Hits: 1
-X-Timer: S1580320106.372971,VS0,VE184
+X-Timer: S1580322194.994080,VS0,VE1
 Vary: Authorization,Accept-Encoding, Accept-Encoding
 Access-Control-Allow-Origin: *
-X-Fastly-Request-ID: 44412e013d4f0358692ea39f2b483837f7040bc1
-Expires: Wed, 29 Jan 2020 17:53:26 GMT
-Source-Age: 0
+X-Fastly-Request-ID: 0eccac3a36e9ced49f4d0f699f3d00db1f9a551f
+Expires: Wed, 29 Jan 2020 18:28:13 GMT
+Source-Age: 224
 transfer-encoding: chunked
 
-15:48:26.653 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.ChannelManager - Adding key: https://raw.githubusercontent.com:443 for channel [id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443]
-15:48:27.424 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : https://raw.githubusercontent.com:443 : 1
-15:48:27.510 [main] DEBUG org.asynchttpclient.netty.request.NettyRequestSender - Using pooled Channel '[id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443]' for 'GET' to 'https://raw.githubusercontent.com/labbcb/workflows/master/tools/star/2.5.3a/star.wdl'
-15:48:27.510 [main] DEBUG org.asynchttpclient.netty.request.NettyRequestSender - Using open Channel [id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443] for GET '/labbcb/workflows/master/tools/star/2.5.3a/star.wdl'
-15:48:27.851 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.handler.HttpHandler - 
+16:23:14.025 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.ChannelManager - Adding key: https://raw.githubusercontent.com:443 for channel [id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443]
+16:23:14.318 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : https://raw.githubusercontent.com:443 : 1
+16:23:14.676 [main] DEBUG org.asynchttpclient.netty.request.NettyRequestSender - Using pooled Channel '[id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443]' for 'GET' to 'https://raw.githubusercontent.com/labbcb/workflows/master/tools/star/2.5.3a/star.wdl'
+16:23:14.677 [main] DEBUG org.asynchttpclient.netty.request.NettyRequestSender - Using open Channel [id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443] for GET '/labbcb/workflows/master/tools/star/2.5.3a/star.wdl'
+16:23:14.702 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.handler.HttpHandler - 
 
 Request DefaultFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: EmptyByteBufBE)
 GET /labbcb/workflows/master/tools/star/2.5.3a/star.wdl HTTP/1.1
@@ -306,26 +306,26 @@ ETag: W/"18e1c676965185f2438abb158a8ed635c1cc182ad4abbbb0cfbff5b808fd346f"
 Cache-Control: max-age=300
 X-Geo-Block-List: 
 Via: 1.1 varnish-v4
-X-GitHub-Request-Id: 686E:7FA6:F1500:104E7B:5E31C569
+X-GitHub-Request-Id: 83B2:051E:A28BB:B130E:5E31CCB1
 Accept-Ranges: bytes
-Date: Wed, 29 Jan 2020 17:48:27 GMT
+Date: Wed, 29 Jan 2020 18:23:14 GMT
 Via: 1.1 varnish
 Connection: keep-alive
-X-Served-By: cache-gru17138-GRU
-X-Cache: MISS
-X-Cache-Hits: 0
-X-Timer: S1580320108.544901,VS0,VE239
+X-Served-By: cache-gru17133-GRU
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1580322195.706435,VS0,VE1
 Vary: Authorization,Accept-Encoding, Accept-Encoding
 Access-Control-Allow-Origin: *
-X-Fastly-Request-ID: 278a8b7569160570aa0121b7aecc6cd5688f8a66
-Expires: Wed, 29 Jan 2020 17:53:27 GMT
-Source-Age: 0
+X-Fastly-Request-ID: b62340e4bfa908763e1a7145c29ac3893d4f5296
+Expires: Wed, 29 Jan 2020 18:28:14 GMT
+Source-Age: 224
 transfer-encoding: chunked
 
-15:48:27.854 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.ChannelManager - Adding key: https://raw.githubusercontent.com:443 for channel [id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443]
-15:48:27.961 [main] DEBUG org.asynchttpclient.netty.request.NettyRequestSender - Using pooled Channel '[id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443]' for 'GET' to 'https://raw.githubusercontent.com/labbcb/workflows/master/tools/htseq/0.9.1/htseq.wdl'
-15:48:27.961 [main] DEBUG org.asynchttpclient.netty.request.NettyRequestSender - Using open Channel [id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443] for GET '/labbcb/workflows/master/tools/htseq/0.9.1/htseq.wdl'
-15:48:28.187 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.handler.HttpHandler - 
+16:23:14.703 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.ChannelManager - Adding key: https://raw.githubusercontent.com:443 for channel [id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443]
+16:23:14.763 [main] DEBUG org.asynchttpclient.netty.request.NettyRequestSender - Using pooled Channel '[id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443]' for 'GET' to 'https://raw.githubusercontent.com/labbcb/workflows/master/tools/htseq/0.9.1/htseq.wdl'
+16:23:14.764 [main] DEBUG org.asynchttpclient.netty.request.NettyRequestSender - Using open Channel [id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443] for GET '/labbcb/workflows/master/tools/htseq/0.9.1/htseq.wdl'
+16:23:14.792 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.handler.HttpHandler - 
 
 Request DefaultFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: EmptyByteBufBE)
 GET /labbcb/workflows/master/tools/htseq/0.9.1/htseq.wdl HTTP/1.1
@@ -346,24 +346,23 @@ ETag: W/"36d1761dad3702c8d7722c68720bd7f7901d7490b206d333fbd04c61838eafeb"
 Cache-Control: max-age=300
 X-Geo-Block-List: 
 Via: 1.1 varnish-v4
-X-GitHub-Request-Id: 5D66:7329:F376F:1073CB:5E31C56B
+X-GitHub-Request-Id: 1594:051D:15AF5:1BBC5:5E31CCB2
 Accept-Ranges: bytes
-Date: Wed, 29 Jan 2020 17:48:28 GMT
+Date: Wed, 29 Jan 2020 18:23:14 GMT
 Via: 1.1 varnish
 Connection: keep-alive
-X-Served-By: cache-gru17138-GRU
-X-Cache: MISS
-X-Cache-Hits: 0
-X-Timer: S1580320108.994128,VS0,VE199
+X-Served-By: cache-gru17133-GRU
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1580322195.791868,VS0,VE1
 Vary: Authorization,Accept-Encoding, Accept-Encoding
 Access-Control-Allow-Origin: *
-X-Fastly-Request-ID: 95ce1847f9f13ee03a9d097fc3711bc4736770d1
-Expires: Wed, 29 Jan 2020 17:53:28 GMT
-Source-Age: 0
+X-Fastly-Request-ID: f25a4c45aa7f2c5c056cc0076d79fbf998f787d0
+Expires: Wed, 29 Jan 2020 18:28:14 GMT
+Source-Age: 224
 transfer-encoding: chunked
 
-15:48:28.189 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.ChannelManager - Adding key: https://raw.githubusercontent.com:443 for channel [id: 0x16ffe992, L:/143.106.200.87:58592 - R:raw.githubusercontent.com/151.101.92.133:443]
-15:48:28.526 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : https://raw.githubusercontent.com:443 : 1
+16:23:14.793 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.ChannelManager - Adding key: https://raw.githubusercontent.com:443 for channel [id: 0xcd4a1a69, L:/143.106.200.87:58707 - R:raw.githubusercontent.com/151.101.92.133:443]
 {
   "RNAseq.TrimGalorePaired.length": "Int (optional, default = 20)",
   "RNAseq.TrimGalorePaired.threePrimeClipR1": "Int? (optional)",
@@ -398,7 +397,7 @@ transfer-encoding: chunked
   "RNAseq.TrimGalorePaired.clipR2": "Int? (optional)"
 }
 
-15:48:28.907 [AsyncHttpClient-3-1] DEBUG io.netty.handler.ssl.SslHandler - [id: 0x16ffe992, L:/143.106.200.87:58592 ! R:raw.githubusercontent.com/151.101.92.133:443] SSLEngine.closeInbound() raised an exception.
+16:23:15.138 [AsyncHttpClient-3-1] DEBUG io.netty.handler.ssl.SslHandler - [id: 0xcd4a1a69, L:/143.106.200.87:58707 ! R:raw.githubusercontent.com/151.101.92.133:443] SSLEngine.closeInbound() raised an exception.
 javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:133)
 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:117)

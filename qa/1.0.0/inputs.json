@@ -1,0 +1,23 @@
+{
+  "QA.FastQC.adapters": "File? (optional)",
+  "QA.FastQC.kmers": "Int? (optional, default = 7)",
+  "QA.Rqc.workers": "Int (optional, default = 1)",
+  "QA.FastQC.extract": "Boolean? (optional, default = false)",
+  "QA.Rqc.reportFile": "String (optional, default = \"rqc_report\")",
+  "QA.Rqc.reads": "Int (optional, default = 1000000)",
+  "QA.FastQC.nogroup": "Boolean? (optional)",
+  "QA.FastQC.limits": "File? (optional)",
+  "QA.FastQC.min_length": "Int? (optional)",
+  "QA.Rqc.sample": "Boolean (optional, default = true)",
+  "QA.FastQC.casava": "Boolean? (optional)",
+  "QA.FastQC.nano": "Boolean? (optional)",
+  "QA.FastQC.threads": "Int? (optional)",
+  "QA.FastQC.format": "String? (optional)",
+  "QA.files": "Array[File]+",
+  "QA.groups": "Array[String]+",
+  "QA.Rqc.rdsFile": "String (optional, default = \"rqc.rds\")",
+  "QA.FastQC.quiet": "Boolean? (optional)",
+  "QA.FastQC.nofilter": "Boolean? (optional)",
+  "QA.FastQC.contaminants": "File? (optional)"
+}
+
