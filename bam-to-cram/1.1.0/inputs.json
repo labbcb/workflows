@@ -1,0 +1,8 @@
+{
+  "BamToCram.ref_fasta": "File",
+  "BamToCram.samtools_path_override": "String? (optional)",
+  "BamToCram.ConvertBamToCram.cpu": "Int? (optional)",
+  "BamToCram.gitc_docker_override": "String? (optional)",
+  "BamToCram.array_bams": "Array[File]"
+}
+

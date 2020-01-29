@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-WOMTOOL_VERSION="41"
+WOMTOOL_VERSION="48"
 
 if [ ! -f womtool.jar ]
 then
@@ -10,7 +10,6 @@ then
   fi
 fi
 
-cd workflows/
 for workflow in */
 do
   cd ${workflow}
@@ -23,9 +22,7 @@ do
       continue
     fi
     echo "Generating inputs.json file for workflow ${workflow%/} version ${version%/}"
-    sed 's|https://raw.githubusercontent.com/labbcb/workflows/master|../../..|g' < ${workflow%/}.wdl > tmp.wdl
-    java -jar ../../../womtool.jar inputs tmp.wdl > inputs.json
-    rm tmp.wdl
+    java -jar ../../womtool.jar inputs ${workflow%/}.wdl > inputs.json
     cd ..
   done
   cd ..
